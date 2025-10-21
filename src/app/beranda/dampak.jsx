@@ -15,28 +15,28 @@ export default function Dampak() {
                 <div className="stat bg-[#F4F4FF] rounded-2xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-xl transition">
                     <FolderOpen className="stat-figure w-10 h-10 mb-4 text-purple-600" />
                     <div className="stat-value text-2xl font-bold mb-2">4</div>
-                    <div className="stat-title text-lg font-bold">Kategori Bantuan</div>
+                    <div className="stat-title text-lg font-bold text-balance">Kategori Bantuan</div>
                     <div className="stat-desc text-xs mt-2 text-balance">Pendidikan, modal usaha, pelatihan, dan kebutuhan dasar</div>
                 </div>
                 {/* component 2 */}
                 <div className="stat bg-[#F4F4FF] rounded-2xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-xl transition">
                     <Users className="stat-figure w-10 h-10 mb-4 text-purple-600" />
                     <div className="stat-value text-2xl font-bold mb-2">15.250+</div>
-                    <div className="stat-title text-lg font-bold">Keluarga Terbantu</div>
+                    <div className="stat-title text-lg font-bold text-balance">Keluarga Terbantu</div>
                     <div className="stat-desc text-xs mt-2 text-balance">Perempuan kepala keluarga yang telah menerima dukungan</div>
                 </div>
                 {/* component 3 */}
                 <div className="stat bg-[#F4F4FF] rounded-2xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-xl transition">
                     <HandCoins className="stat-figure w-10 h-10 mb-4 text-purple-600" />
                     <div className="stat-value text-2xl font-bold mb-2">Rp 1,2 M</div>
-                    <div className="stat-title text-lg font-bold">Nilai Total Bantuan</div>
+                    <div className="stat-title text-lg font-bold text-balance">Nilai Bantuan</div>
                     <div className="stat-desc text-xs mt-2 text-balance">Total bantuan yang telah tersalurkan kepada penerima di berbagai wilayah</div>
                 </div>
                 {/* component 4 */}
                 <div className="stat bg-[#F4F4FF] rounded-2xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-xl transition">
                     <Laugh className="stat-figure w-10 h-10 mb-4 text-purple-600" />
                     <div className="stat-value text-2xl font-bold mb-2">96%</div>
-                    <div className="stat-title text-lg font-bold ">Kepuasan Penerima</div>
+                    <div className="stat-title text-lg font-bold text-balance">Kepuasan Penerima</div>
                     <div className="stat-desc text-xs mt-2 text-balance">Penerima merasa proses bantuan mudah dan bermanfaat langsung</div>
                 </div>
             </div>
