@@ -4,9 +4,9 @@ import Media from './beranda/media'
 import Terkini from './beranda/terkini'
 import Dampak from './beranda/dampak'
 import Bagaimana from './beranda/bagaimana'
-import Cara from '.beranda/cara'
-import Cerita from '.beranda/cerita'
-import Tentang from '.beranda/tentang'
+import Cara from './beranda/cara'
+import Cerita from './beranda/cerita'
+import Tentang from './beranda/tentang'
 import Image from "next/image";
 
 export default function Home() {
