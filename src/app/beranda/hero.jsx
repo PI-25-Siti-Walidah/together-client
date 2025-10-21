@@ -4,7 +4,7 @@ export default function Hero() {
       <div
         className="hero min-h-screen"
         style={{
-          backgroundImage: "url('/beranda/hero-section.jpg')",
+          backgroundImage: "url('/beranda/hero-home.jpg')",
         }}
       >
         <div className="hero-overlay"></div>
