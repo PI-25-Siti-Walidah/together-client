@@ -5,9 +5,9 @@ export default function Navbar() {
   return (
     <>
       {/* tampilkan hanya di desktop */}
-      {/* <div className="hidden lg:block">
+      <div className="hidden lg:block fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
         <Desktop />
-      </div> */}
+      </div>
 
         {/* tampilkan hanya di mobile */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t shadow-lg">
