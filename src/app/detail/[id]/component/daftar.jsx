@@ -1,4 +1,4 @@
-export default function Info(){
+export default function Daftar(){
     return(
         <section>
             

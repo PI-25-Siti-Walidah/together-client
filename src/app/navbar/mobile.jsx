@@ -1,6 +1,12 @@
 import { House, HandCoins, BotMessageSquare, Star, Activity } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 export default function Mobile() {
+    const router = useRouter();
+    const handleInfo = () => {
+    router.push('/info')
+}
+
   return (
     <div className="dock flex justify-around bg-[#6D123F] items-center py-2">
         <button className="flex flex-col items-center text-white hover:bg-pink-500">
@@ -8,7 +14,7 @@ export default function Mobile() {
             <span className="dock-label text-xs mt-1">Beranda</span>
         </button>
 
-        <button className="flex flex-col items-center text-white hover:bg-pink-500">
+        <button onClick={handleInfo} className="flex flex-col items-center text-white hover:bg-pink-500">
             <HandCoins className="w-5 h-5" />
             <span className="dock-label text-xs mt-1">Bantuan</span>
         </button>
