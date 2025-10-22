@@ -21,7 +21,7 @@ export default function Hero() {
               ToGetHer hadir untuk menyalurkan bantuan sosial, pendidikan, dan
               kesehatan bagi perempuan yang membutuhkan
             </p>
-            <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn rounded-sm bg-[#6D123F] text-white border-none">
+            <button className="btn md:btn-lg xl:btn rounded-sm bg-[#6D123F] text-white text-lg border-none">
               Cari Bantuan
             </button>
           </div>

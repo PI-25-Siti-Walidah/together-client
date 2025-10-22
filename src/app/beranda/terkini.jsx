@@ -20,20 +20,20 @@ export default function Terkini() {
         opts={{
           align: "start",
         }}
-        className="w-full max-w-5xl mx-auto"
+        className="w-full max-w-5xl"
       >
-        <CarouselContent className="flex flex-row gap-5 md:gap-0 ">
+        <CarouselContent className="flex flex-row gap-1 pr-10 md:gap-0">
           {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem
               key={index}
-              className="pl-4 basis-5/6 md:basis-1/2 lg:basis-1/3"
+              className="pl-4 sm:basis-1/2 lg:basis-1/3"
             >
               <Card />
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 -left-12 hidden md:flex" />
-        <CarouselNext className="absolute top-1/2 -translate-y-1/2 -right-12 hidden md:flex" />
+        <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 -left-6" />
+        <CarouselNext className="absolute top-1/2 -translate-y-1/2 -right-6" />
       </Carousel>
     </section>
   );
