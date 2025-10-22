@@ -9,7 +9,7 @@ import {
 
 export default function Terkini() {
   return (
-    <section className="w-full h-fit bg-[#6D123F] p-9 flex flex-col items-center">
+    <section className="w-full h-fit bg-[#6D123F] py-12 px-9 flex flex-col items-center">
       <div className="mb-3 flex items-center flex-col gap-1">
         <h1 className="font-bold text-2xl text-white">Bantuan Terkini</h1>
         <p className="text-white text-lg opacity-80">

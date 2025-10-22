@@ -1,6 +1,6 @@
 export default function Cara(){
     return(
-        <section className="py-16 bg-[#6D123F]">
+        <section className="py-12 bg-[#6D123F]">
             <div className="mb-10 text-center px-4">
                 <h2 className="font-bold text-2xl text-white">
                     Cara Menggunakan ToGetHer
