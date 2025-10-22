@@ -4,9 +4,9 @@ export default function Bagaimana() {
     return (
     <section className="py-12 bg-purple-50">
         {/* title Bagaimana */}
-        <div className="text-center mb-12">
-            <div className="text-3xl  font-bold text-purple-600 mb-4 text-balance">Bagaimana Cara Menerima Bantuan</div>
-            <p className="text-gray-600 max-w-2xl mx-auto mb-8 text-balance">Together membantu penerima mendapatkan bantuan dengan proses yang mudah, cepat, dan transparan.</p>
+        <div className="max-w-3xl lg:max-w-5xl mx-auto text-center mb-8">
+            <div className="text-3xl font-bold lg:max-w-5xl text-purple-600 mb-4 text-balance">Bagaimana Cara Menerima Bantuan</div>
+            <p className="text-gray-600 min-w-lg lg:max-w-5xl mb-8 text-balance">Together membantu penerima mendapatkan bantuan dengan proses yang mudah, cepat, dan transparan.</p>
         </div>
             
         {/* //stats component */}

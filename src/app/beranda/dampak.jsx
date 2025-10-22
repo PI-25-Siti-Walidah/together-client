@@ -4,9 +4,9 @@ export default function Dampak() {
     return (
         <section className="py-12">
             {/* title Dampak */}
-            <div className="text-center mb-12">
-                <div className="text-3xl  font-bold text-purple-600 mb-4 text-balance">Dampak Nyata untuk Keluarga Perempuan Hebat</div>
-                <p className="text-gray-600 max-w-2xl mx-auto mb-8 text-balance">Bersama, kami membantu perempuan kepala keluarga untuk kembali berdaya, menghidupi keluarga, dan menciptakan perubahan di lingkungannya.</p>
+            <div className="max-w-3xl lg:max-w-5xl mx-auto text-center mb-8">
+                <div className="text-3xl font-bold lg:max-w-5xl text-purple-600 mb-4 text-balance">Dampak Nyata untuk Keluarga Perempuan Hebat</div>
+                <p className="text-gray-600 min-w-lg lg:max-w-5xl mb-8 text-balance">Bersama, kami membantu perempuan kepala keluarga untuk kembali berdaya, menghidupi keluarga, dan menciptakan perubahan di lingkungannya.</p>
             </div>
             
             {/* //stats component */}
