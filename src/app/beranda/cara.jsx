@@ -13,7 +13,7 @@ export default function Cara(){
             <div className="stat m-2 shadow rounded-xl bg-[#FFF9F7] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 ">
                 <div className="stat m-2 flex flex-col items-center">
                     <img src="/beranda/tutorial/1.png" alt="" 
-                    className="stat-figure w-28 h-28"/>
+                    className="stat-figure w-[103px] h-[103px]"/>
                     <p className="text-sm opacity-80 text-center mt-1.5">Masuk ke bantuan</p>
                 </div>
                 <div className="stat flex flex-col items-center">
