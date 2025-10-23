@@ -8,7 +8,7 @@ import Testi from "./component/testi"
 
 export default function Info(){
     return(
-        <section>
+        <section className="m-6 lg:my-12">
             <Header />
             <Spesifikasi />
             <Deskripsi />
