@@ -1,7 +1,7 @@
 export default function Daftar() {
   return (
     <section className="mt-3">
-      <div className="card w-[560px] bg-base-100 card-md shadow-sm">
+      <div className="card bg-base-100 lg:w-md card-md shadow-sm">
         <div className="card-body">
           <h2 className="card-title text-[#6D123F] font-bold">Dukungan Ini Hadir Untukmu</h2>
           <p className="opacity-80">
