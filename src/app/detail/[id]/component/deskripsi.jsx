@@ -14,7 +14,7 @@ const syaratIsi = isi[0]?.syarat
 
   return (
     <section className="mt-3 ">
-      <div className="card sm:w-[560px] lg:w-2xl bg-base-100 card-md shadow-sm">
+      <div className="card lg:w-2xl bg-base-100 card-md shadow-sm">
         <div className="card-body">
           <h2 className="card-title text-[#6D123F] font-bold">Deskripsi</h2>
           <p className="text-justify opacity-80">
