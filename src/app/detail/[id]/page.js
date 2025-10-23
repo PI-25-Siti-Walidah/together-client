@@ -8,7 +8,7 @@ import Testi from "./component/testi"
 
 export default function Info(){
     return(
-        <section className="flex flex-col items-center m-6 lg:my-12">
+        <section className=" flex flex-col items-center m-6 lg:my-12">
             <Header />
             <Spesifikasi />
             <Deskripsi />
