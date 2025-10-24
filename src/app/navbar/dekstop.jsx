@@ -3,6 +3,12 @@ import { BotMessageSquare } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function NavbarDekstop() {
+const router = useRouter();
+
+const handleInfo = () => {
+  router.push('/info')
+}
+
   return (
     <section className="sticky top-0 z-100">
       <div className="navbar shadow-sm px-12 py-5 bg-[#FFF9F7]">
@@ -22,7 +28,9 @@ export default function NavbarDekstop() {
           <button className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#FCC0C5] hover:border-[#FCC0C5] hover:text-white">
             Beranda
           </button>
-          <button className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#FCC0C5] hover:border-[#FCC0C5] hover:text-white">
+          <button 
+          onClick={handleInfo}
+          className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#FCC0C5] hover:border-[#FCC0C5] hover:text-white">
             Bantuan
           </button>
           <button className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#FCC0C5] hover:border-[#FCC0C5] hover:text-white">

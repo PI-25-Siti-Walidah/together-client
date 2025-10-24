@@ -8,12 +8,16 @@ import Testi from "./component/testi"
 
 export default function Info(){
     return(
-        <section>
+        <section className=" flex flex-col items-center m-6 lg:my-12">
             <Header />
             <Spesifikasi />
-            <Deskripsi />
-            <Daftar />
-            <Testi />  
+            <div className="lg:flex lg:gap-3">
+                <Deskripsi />
+                <div>
+                    <Daftar />
+                    <Testi />  
+                </div>
+            </div>
         </section>
     )
 }
