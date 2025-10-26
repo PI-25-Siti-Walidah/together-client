@@ -6,6 +6,9 @@ export default function Mobile() {
     const handleInfo = () => {
     router.push('/info')
 }
+    const handleAktivitas = () => {
+    router.push('/aktivitas/[id]')
+}
 
   return (
     <div className="dock flex justify-around bg-[#6D123F] items-center py-2">
@@ -29,7 +32,7 @@ export default function Mobile() {
             <span className="dock-label text-xs mt-1">Testimoni</span>
         </button>
 
-        <button className="flex flex-col items-center text-white hover:bg-pink-500">
+        <button onClick={handleAktivitas} className="flex flex-col items-center text-white hover:bg-pink-500">
             <Activity className="w-5 h-5" />
             <span className="dock-label text-xs mt-1">Aktivitas</span>
         </button>
