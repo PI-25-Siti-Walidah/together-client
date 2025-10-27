@@ -18,7 +18,7 @@ export default function NavbarDekstop() {
   };
 
   const handleAktivitas = () => {
-    router.push("/aktivitas");
+    router.push("/aktivitas/[id]");
   };
 
   return (
