@@ -43,9 +43,9 @@ export default function Riyawat() {
             <p>{r.donatur}</p>
           </div>
           <div
-            className={`badge ${
-              badgeStatus[r.status] || "badge-neutral"
-            } p-4 text-sm font-medium text-white`}
+            className={`badge badge-soft ${
+              badgeStatus[r.status] || "badge-warning"
+            } p-4 text-sm font-medium `}
           >
             {r.status}
           </div>

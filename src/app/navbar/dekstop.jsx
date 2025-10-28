@@ -14,7 +14,7 @@ export default function NavbarDekstop() {
   };
 
   const handleTestimoni = () => {
-    router.push("/testimonio");
+    router.push("/testimoni");
   };
 
   const handleAktivitas = () => {
