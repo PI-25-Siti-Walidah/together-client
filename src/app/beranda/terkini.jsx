@@ -9,8 +9,8 @@ import {
 
 export default function Terkini() {
   return (
-    <section className="w-full h-fit bg-[#6D123F] py-12 px-9 flex flex-col items-center">
-      <div className="mb-3 flex items-center flex-col gap-1">
+    <section className="w-full h-fit bg-[#6D123F] py-12 px-4 md:px-9">
+      <div className="mb-4 text-center">
         <h1 className="font-bold text-2xl text-white">Bantuan Terkini</h1>
         <p className="text-white text-lg opacity-80">
           Lihat bantuan yang sedang berjalan
@@ -20,20 +20,22 @@ export default function Terkini() {
         opts={{
           align: "start",
         }}
-        className="w-full max-w-5xl"
+        className="p-5 w-full max-w-sm lg:max-w-5xl mx-auto"
       >
-        <CarouselContent className="flex flex-row gap-1 pr-10 md:gap-0">
+        <CarouselContent className="lg:-ml-4">
           {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem
               key={index}
-              className="pl-4 sm:basis-1/2 lg:basis-1/3"
+              className="md:basis-1/2 lg:basis-1/3"
             >
-              <Card />
+              <div className="p-1">
+                <Card />
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 -left-6" />
-        <CarouselNext className="absolute top-1/2 -translate-y-1/2 -right-6" />
+        <CarouselPrevious />
+        <CarouselNext />
       </Carousel>
     </section>
   );
