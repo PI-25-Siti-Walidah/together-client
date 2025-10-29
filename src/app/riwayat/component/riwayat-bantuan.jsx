@@ -1,3 +1,4 @@
+'use client'
 import { HandHeart } from "lucide-react";
 
 export default function ListRiwayat() {
@@ -36,14 +37,21 @@ export default function ListRiwayat() {
     },
   ];
 
+  const badgeStatus ={
+    Selesai: "badge-info",
+    Diterima: "badge-success",
+    Ditinjau: "badge-warning",
+    Ditolak: "badge-error",
+}
+
   return (
     <section className="w-full px-6 lg:px-16">
       {riwayatBantuan.map((list) => (
         <div
           key={list.id}
-          className="card bg-base-100 card-sm shadow-sm mb-2.5 border-1"
+          className="card bg-base-100 card-sm shadow-sm mb-2.5 border"
         >
-          <div className="card-body lg:flex lg:flex-row lg:justify-between">
+          <div className="card-body lg:flex lg:flex-row lg:justify-between lg:items-center">
             <div className="flex flex-row gap-3 items-center">
               <HandHeart className="text-[#6D123F]" />
               <div>
@@ -55,9 +63,15 @@ export default function ListRiwayat() {
                 </p>
               </div>
             </div>
-            <div className="justify-end card-actions items-center flex flex-row gap-2.5">
-              <div className="badge badge-soft badge-primary text-[16px] p-4">{list.status}</div>
-              <button className="btn btn-primary w-fit text-[16px] font-medium bg-[#6D123F] text-white rounded-sm border-none hover:bg-pink-600 hover:border-pink-600 hover:text-white">
+            <div className="justify-end items-center flex flex-row gap-2 mt-4 lg:mt-0">
+              <div
+                className={`badge badge-soft ${
+                  badgeStatus[list.status] || "badge-neutral"
+                } p-4 text-sm font-medium`}
+              >
+                {list.status}
+              </div>
+              <button className="btn w-fit text-[16px] font-medium bg-[#6D123F] text-white rounded-sm border-none hover:bg-pink-600">
                 Lihat
               </button>
             </div>
