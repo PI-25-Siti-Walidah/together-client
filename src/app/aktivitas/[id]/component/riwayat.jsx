@@ -34,7 +34,7 @@ export default function Riyawat() {
   }
 
   return (
-    <section className=" p-10 card w-full bg-base-100 card-xs shadow-sm flex items-center">
+    <section className="mt-8 p-10 card w-full bg-base-100 card-xs shadow-sm flex items-center">
       <h1 className="mb-8 font-bold text-xl ">Riwayat Bantuan</h1>
       {riwayat.map((r, i) => (
         <div key={i} className="w-full flex justify-between mb-3 pb-1.5 border-b border-gray-200 mx-4">

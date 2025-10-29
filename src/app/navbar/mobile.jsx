@@ -1,3 +1,4 @@
+'use client'
 import { House, HandCoins, BotMessageSquare, Star, Activity } from "lucide-react"
 import { useRouter } from "next/navigation"
 
@@ -6,13 +7,16 @@ export default function Mobile() {
     const handleInfo = () => {
     router.push('/info')
 }
+    const handleBeranda = () => {
+        router.push("/");
+    };
     const handleAktivitas = () => {
     router.push('/aktivitas/[id]')
 }
 
   return (
     <div className="dock flex justify-around bg-[#6D123F] items-center py-2">
-        <button className="flex flex-col items-center text-white hover:bg-pink-500">
+        <button onClick={handleBeranda} className="flex flex-col items-center text-white hover:bg-pink-500">
             <House className="w-5 h-5" />
             <span className="dock-label text-xs mt-1">Beranda</span>
         </button>

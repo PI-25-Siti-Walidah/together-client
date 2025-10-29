@@ -19,7 +19,7 @@ export default function Greeting() {
 
             {/* Teks sambutan */}
             <div className="text-md font-semibold text-[#6D123F] ">Hai, {nama}!</div>
-            <p className="text-sm font-semibold text-[#6D123F]">Lihat profil</p>
+            {/* <p className="text-sm font-semibold text-[#6D123F]">Lihat profil</p> */}
 
             </div>
             

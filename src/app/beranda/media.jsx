@@ -15,7 +15,7 @@ export default function Media(){
     return(
         <section className="py-12">
             <div className="max-w-3xl lg:max-w-5xl mx-auto text-center mb-8">
-                <div className="text-3xl font-bold lg:max-w-5xl text-purple-600 mb-4 text-balance">Media Partners</div>
+                <div className="text-3xl font-bold lg:max-w-5xl text-[#6D123F] mb-4 text-balance">Media Partners</div>
             </div>
 
             <div className="overflow-hidden w-full">
