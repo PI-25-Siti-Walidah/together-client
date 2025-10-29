@@ -7,6 +7,8 @@ import Bagaimana from './beranda/bagaimana'
 import Cara from './beranda/cara'
 import Cerita from './beranda/cerita'
 import Tentang from './beranda/tentang'
+import Footer from './footer/footer';
+import Navbar from './navbar/navbar'
 import Image from "next/image";
 
 export default function Home() {
@@ -21,6 +23,8 @@ export default function Home() {
         <Cara />
         <Cerita />
         <Tentang />
+        <Footer />
+        <Navbar />
       </main>
       <footer>
       </footer>
