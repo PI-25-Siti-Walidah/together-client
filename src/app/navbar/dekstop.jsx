@@ -5,16 +5,16 @@ import { useRouter } from "next/navigation";
 export default function NavbarDekstop() {
   const router = useRouter();
 
-  const handeBeranda = () => {
-    router.push("/beranda");
+  const handleBeranda = () => {
+    router.push("/");
   };
   
   const handleInfo = () => {
     router.push("/info");
   };
 
-  const handleTestimoni = () => {
-    router.push("/testimoni");
+  const handleCerita = () => {
+    router.push("/cerita");
   };
 
   const handleAktivitas = () => {
@@ -38,7 +38,7 @@ export default function NavbarDekstop() {
         </div>
         <div className="navbar-end hidden lg:flex gap-3">
           <button 
-          onClick={handeBeranda}
+          onClick={handleBeranda}
           className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#FCC0C5] hover:border-[#FCC0C5] hover:text-white">
             Beranda
           </button>
@@ -48,8 +48,10 @@ export default function NavbarDekstop() {
           >
             Bantuan
           </button>
-          <button className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#FCC0C5] hover:border-[#FCC0C5] hover:text-white">
-            Testimoni
+          <button 
+          onClick={handleCerita}
+          className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#FCC0C5] hover:border-[#FCC0C5] hover:text-white">
+            Cerita
           </button>
           <button 
           onClick={handleAktivitas}
