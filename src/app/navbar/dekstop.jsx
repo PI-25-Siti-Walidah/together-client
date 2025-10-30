@@ -13,8 +13,8 @@ export default function NavbarDekstop() {
     router.push("/info");
   };
 
-  const handleTestimoni = () => {
-    router.push("/testimoni");
+  const handleCerita = () => {
+    router.push("/cerita");
   };
 
   const handleAktivitas = () => {

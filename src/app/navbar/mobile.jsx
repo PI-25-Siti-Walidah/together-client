@@ -4,12 +4,14 @@ import { useRouter } from "next/navigation"
 
 export default function Mobile() {
     const router = useRouter();
+    
+    const handleBeranda = () => {
+    router.push("/");
+};
+
     const handleInfo = () => {
     router.push('/info')
 }
-    const handleBeranda = () => {
-        router.push("/");
-    };
     const handleAktivitas = () => {
     router.push('/aktivitas/[id]')
 }
@@ -31,9 +33,9 @@ export default function Mobile() {
             <span className="dock-label text-xs mt-1">Her AI</span>
         </button>
 
-        <button className="flex flex-col items-center text-white hover:bg-pink-500">
+        <button onClick={handleCerita} className="flex flex-col items-center text-white hover:bg-pink-500">
             <Star className="w-5 h-5" />
-            <span className="dock-label text-xs mt-1">Testimoni</span>
+            <span className="dock-label text-xs mt-1">Cerita</span>
         </button>
 
         <button onClick={handleAktivitas} className="flex flex-col items-center text-white hover:bg-pink-500">
