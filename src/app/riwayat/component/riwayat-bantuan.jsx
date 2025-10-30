@@ -1,5 +1,5 @@
 'use client'
-import { HandHeart } from "lucide-react";
+import { HandHeart, CheckCircle, Hourglass,  Archive, CircleX } from "lucide-react";
 
 export default function ListRiwayat({filterStatus}) {
   const riwayatBantuan = [
@@ -43,8 +43,13 @@ export default function ListRiwayat({filterStatus}) {
     Ditinjau: "badge-warning",
     Ditolak: "badge-error",
 }
-
-  const filteredRiwayat = riwayatBantuan.filter((list) => {
+const badgeStatusIcon ={
+    Selesai: Archive,
+    Diterima: CheckCircle,
+    Ditinjau: Hourglass,
+    Ditolak: CircleX,
+}
+  const filterRiwayat = riwayatBantuan.filter((list) => {
       if (filterStatus === "Semua") {
         return true;
       }
@@ -53,7 +58,9 @@ export default function ListRiwayat({filterStatus}) {
 
   return (
     <section className="w-full px-6 lg:px-16">
-      {filteredRiwayat.map((list) => (
+      {filterRiwayat.map((list) => {
+        const IconComponent = badgeStatusIcon[list.status];
+        return(
         <div
           key={list.id}
           className="card bg-base-100 card-sm shadow-sm mb-2.5 border"
@@ -76,6 +83,7 @@ export default function ListRiwayat({filterStatus}) {
                   badgeStatus[list.status] || "badge-neutral"
                 } p-4 text-sm font-medium`}
               >
+                {IconComponent && <IconComponent size={16} />}
                 {list.status}
               </div>
               <button className="btn w-fit text-[16px] font-medium bg-[#6D123F] text-white rounded-sm border-none hover:bg-pink-600">
@@ -84,7 +92,7 @@ export default function ListRiwayat({filterStatus}) {
             </div>
           </div>
         </div>
-      ))}
+      )})}
     </section>
   );
 }
