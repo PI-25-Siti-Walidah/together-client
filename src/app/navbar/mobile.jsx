@@ -16,6 +16,9 @@ export default function Mobile() {
     router.push('/aktivitas/[id]')
 }
 
+    const handleCerita = () => {
+    router.push('/cerita')
+}
   return (
     <div className="dock flex justify-around bg-[#6D123F] items-center py-2">
         <button onClick={handleBeranda} className="flex flex-col items-center text-white hover:bg-pink-500">
