@@ -6,7 +6,7 @@ export default function Riyawat() {
     {
       judul: "Bantuan Modal Usaha Mikro",
       donatur: "Kementerian Koperasi",
-      status: "Diperiksa",
+      status: "Diproses",
     },
     {
       judul: "Beasiswa Anak Sekolah",
@@ -16,23 +16,24 @@ export default function Riyawat() {
     {
       judul: "Pelatihan keterampilan digital",
       donatur: "Ayo Digital",
-      status: "Disetujui",
+      status: "Diterima",
     },
     {
       judul: "Santunan Ekonomi Perempuan Hebat",
       donatur: "Yayasan Perempuan Maju",
-      status: "Disetujui",
+      status: "Selesai",
     },
     {
       judul: "Bantuan Modal Usaha Mikro",
       donatur: "Kementerian Koperasi",
-      status: "Diperiksa",
+      status: "Diproses",
     },
   ];
 
   const badgeStatus ={
-    Disetujui: "badge-success",
-    Diperiksa: "badge-warning",
+    Selesai: "badge-info",
+    Diterima: "badge-success",
+    Diproses: "badge-warning",
     Ditolak: "badge-error",
   }
 
