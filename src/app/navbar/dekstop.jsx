@@ -48,7 +48,9 @@ export default function NavbarDekstop() {
           >
             Bantuan
           </button>
-          <button className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#FCC0C5] hover:border-[#FCC0C5] hover:text-white">
+          <button 
+          onClick={handleCerita}
+          className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#FCC0C5] hover:border-[#FCC0C5] hover:text-white">
             Cerita
           </button>
           <button 
