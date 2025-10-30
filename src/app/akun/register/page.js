@@ -58,7 +58,7 @@ export default function Register() {
             px-10 py-12 bg-[#6D123F] text-white 
             flex flex-col items-center justify-center 
             rounded-b-[75px] border-x-2 border-b-2 border-dotted border-pink-50 
-            lg:w-1/2 lg:rounded-b-none lg:rounded-tr-[150px] lg:rounded-br-[150px] lg:border-none
+            lg:w-1/2 lg:rounded-b-none lg:rounded-tr-[150px] lg:rounded-br-[150px] lg:border-t-2 lg:border-r-2 lg:border-b-2 lg:border-l-0
           "
         >
           <div className="text-center">

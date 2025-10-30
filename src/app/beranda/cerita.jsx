@@ -30,7 +30,7 @@ export default function Cerita() {
   return (
     <section className="py-12">
       <div className="max-w-3xl lg:max-w-5xl mx-auto text-center mb-8">
-        <div className="text-3xl font-bold lg:max-w-5xl text-purple-600 mb-4 text-balance">Cerita dari Perempuan Tangguh</div>
+        <div className="text-3xl font-bold lg:max-w-5xl text-[#6D123F] mb-4 text-balance">Cerita dari Perempuan Tangguh</div>
         <p className="text-gray-600 min-w-lg lg:max-w-5xl mb-8 text-balance">
           Dengarkan bagaimana dukungan kami membantu mereka meningkatkan kesejahteraan keluarga.
         </p>
@@ -80,7 +80,7 @@ export default function Cerita() {
               onClick={() => setCurrent(i)}
               aria-label={`Slide ${i + 1}`}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                current === i ? "bg-purple-600 w-5" : "bg-gray-300"
+                current === i ? "bg-[#6D123F] w-5" : "bg-gray-300"
               }`}
             />
           ))}

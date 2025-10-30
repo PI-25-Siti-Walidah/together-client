@@ -1,3 +1,4 @@
+'use client'
 import { House, HandCoins, BotMessageSquare, Star, Activity } from "lucide-react"
 import { useRouter } from "next/navigation"
 
@@ -11,11 +12,6 @@ export default function Mobile() {
     const handleInfo = () => {
     router.push('/info')
 }
-
-  const handleCerita = () => {
-    router.push("/cerita");
-};
-
     const handleAktivitas = () => {
     router.push('/aktivitas/[id]')
 }

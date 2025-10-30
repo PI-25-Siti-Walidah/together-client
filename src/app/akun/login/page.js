@@ -41,13 +41,13 @@ export default function Login() {
       <div className="px-10 py-12 bg-pink-50 text-white 
             flex flex-col items-center justify-center 
             rounded-b-[75px] border-x-2 border-b-2 border-dotted border-[#6D123F] 
-            lg:w-1/2 lg:rounded-b-none lg:rounded-tr-[150px] lg:rounded-br-[150px]">
+            lg:w-1/2 lg:rounded-b-none lg:rounded-tr-[150px] lg:rounded-br-[150px] lg:border-t-2 lg:border-r-2 lg:border-b-2 lg:border-l-0">
         <div className="text-center">
           <h2 className="text-lg font-bold text-[#6D123F]">
             Hai, Selamat Datang di ToGetHer
           </h2>
           <p className="text-sm text-gray-700 mt-1">Belum punya <span className="underline">akun</span>?</p>
-          <button onClick={handleRegister} className="btn btn-ghost w-fit mt-4 text-[16px] text-pink-50 font-bold bg-[#6D123F] hover:bg-pink-600 hover:border-[#FCC0C5] hover:text-white">
+          <button onClick={handleRegister} className="btn btn-ghost w-fit mt-4 text-[16px] text-pink-50 font-bold bg-[#6D123F] rounded-sm hover:bg-pink-600 hover:border-[#FCC0C5] hover:text-white">
             Buat Akun
           </button>
         </div>
