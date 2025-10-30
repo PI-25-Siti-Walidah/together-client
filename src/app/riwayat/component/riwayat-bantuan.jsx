@@ -1,7 +1,7 @@
 'use client'
 import { HandHeart } from "lucide-react";
 
-export default function ListRiwayat() {
+export default function ListRiwayat({filterStatus}) {
   const riwayatBantuan = [
     {
       id: 1,
@@ -44,9 +44,16 @@ export default function ListRiwayat() {
     Ditolak: "badge-error",
 }
 
+  const filteredRiwayat = riwayatBantuan.filter((list) => {
+      if (filterStatus === "Semua") {
+        return true;
+      }
+      return list.status === filterStatus;
+});
+
   return (
     <section className="w-full px-6 lg:px-16">
-      {riwayatBantuan.map((list) => (
+      {filteredRiwayat.map((list) => (
         <div
           key={list.id}
           className="card bg-base-100 card-sm shadow-sm mb-2.5 border"
