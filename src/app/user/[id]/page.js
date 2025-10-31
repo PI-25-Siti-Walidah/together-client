@@ -4,6 +4,7 @@ import Akun from "./component/akun";
 import Avatar from "./component/avatar";
 import Sandi from "./component/sandi";
 import Navbar from "@/app/navbar/navbar";
+import PusatBantuan from "./component/bantuan";
 
 export default function UserAkun(){
     return(
@@ -12,6 +13,9 @@ export default function UserAkun(){
             <Akun />
             <Sandi />
             <Navbar />
+            <div>
+                <PusatBantuan />
+            </div>
         </div>
     )
 }
