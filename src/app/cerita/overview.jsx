@@ -3,7 +3,7 @@ import { MessageSquare, Laugh } from "lucide-react"
 export default function Overview (){
   const satisfactionData = [
     { kategori: "Ekonomi", puas: 92 },
-    { kategori: "Pendidikan Anak", puas: 95 },
+    { kategori: "Pendidikan", puas: 95 },
     { kategori: "Modal Usaha", puas: 90 },
     { kategori: "Pelatihan", puas: 97 },
   ];
@@ -11,46 +11,50 @@ export default function Overview (){
     return(
         <section>
             {/* title Cerita */}
-            <div className="max-w-3xl lg:max-w-5xl mx-auto mb-8">
-                <div className="text-3xl font-bold lg:max-w-5xl text-[#6D123F] mb-4 text-balance">Cerita Perempuan Tangguh</div>
-                <p className="text-gray-600 min-w-lg lg:max-w-5xl mb-8 text-balance">Kami membantu perempuan kepala keluarga untuk kembali berdaya, menghidupi keluarga, dan menciptakan perubahan di lingkungannya.</p>
+            <div className="max-w-4xl mx-auto text-center mb-6 px-4">
+                <div className="pt-6 text-3xl font-bold text-[#6D123F] mb-4">Cerita Perempuan Tangguh</div>
+                <p className="text-gray-600 mb-6">Kami membantu perempuan kepala keluarga untuk kembali berdaya, menghidupi keluarga, dan menciptakan perubahan di lingkungannya.</p>
             </div>
             
             {/* //stats component */}
-            <div className="stat shadow grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-3 gap-4">
+            <div className="stat grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-3 gap-4 px-4 max-w-6xl mx-auto">
                 {/* component 1 */}
-                <div className="stat bg-[#F4F4FF] rounded-2xl shadow-md p-6 flex flex-col items-start hover:shadow-xl transition">
-                    <div className="stat-figure text-primary items-start">
-                    <MessageSquare className="inline-block h-8 w-8 stroke-current text-[#6D123F]" />
+                <div className="stat bg-[#F4F4FF] rounded-2xl flex items-center justify-between shadow-md p-5 hover:shadow-xl transition">
+                    <div>
+                      <div className="stat-title text-sm sm:text-base font-semibold text-gray-700">Total Cerita</div>
+                      <div className="stat-value text-3xl font-bold text-[#6D123F] mt-1">100K+</div>
+                      <div className="stat-desc text-xs sm:text-xs text-balance">Jumlah testimoni penerima</div>
                     </div>
-                    <div className="stat-value text-2xl font-bold mb-2">100K+</div>
-                    <div className="stat-title text-lg font-bold text-[#6D123F] text-balance">Total Tesitimoni</div>
-                    <div className="stat-desc text-xs mt-2 text-balance">Jumlah cerita mereka setelah mendapatkan bantuan</div>
-                    {/* </div> */}
-                    <MessageSquare className="w-10 h-10 mb-4 text-[#6D123F]" />
+                    <div className="stat-figure text-primary items-start">
+                      <MessageSquare className="h-6 w-6 sm:h-7 sm:w-7 mb-2 stroke-current text-[#6D123F]" />
+                    </div>
                 </div>
                 {/* component 2 */}
-                <div className="stat bg-[#F4F4FF] rounded-2xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-xl transition">
-                    <Laugh className="stat-figure w-10 h-10 mb-4 text-[#6D123F]" />
-                    <div className="stat-value text-2xl font-bold mb-2">96%</div>
-                    <div className="stat-title text-lg font-bold text-[#6D123F] text-balance">Kepuasan Penerima</div>
-                    <div className="stat-desc text-xs mt-2 text-balance">Penerima merasa proses bantuan mudah dan bermanfaat langsung</div>
+                <div className="stat bg-[#F4F4FF] rounded-2xl flex items-center justify-between shadow-md p-5 hover:shadow-xl transition">
+                    <div>
+                    <div className="stat-title text-sm sm:text-base font-semibold text-gray-700">Kepuasan User</div>
+                    <div className="stat-value text-3xl font-bold text-[#6D123F] mt-1">96%</div>
+                    <div className="stat-desc text-xs sm:text-xs text-balance">Tingkat kepuasan 2025</div>
+                    </div>
+                    <div className="stat-figure text-primary items-start">
+                    <Laugh className="h-6 w-6 sm:h-7 sm:w-7 mb-2 stroke-current text-[#6D123F]" />
+                    </div>
                 </div>
                 {/* component 3 */}
                 <div className="stat bg-[#F4F4FF] rounded-2xl shadow-md p-6 flex flex-col items-center hover:shadow-xl transition">
 
-          <div className="space-y-3">
+          <div className="w-full mx-4">
             {satisfactionData.map((item) => (
               <div key={item.kategori}>
-                <div className="flex justify-between text-sm text-gray-700 mb-1">
+                <div className="flex justify-between gap-2 text-xs font-semibold stat-title mb-1">
                   <span>{item.kategori}</span>
                   <span className="font-semibold text-[#6D123F]">
                     {item.puas}%
                   </span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-2.5">
+                <div className="w-full bg-gray-200 rounded-full h-1">
                   <div
-                    className="bg-[#6D123F] h-2.5 rounded-full transition-all duration-500"
+                    className="bg-[#6D123F] h-1 rounded-full transition-all duration-500"
                     style={{ width: `${item.puas}%` }}
                   ></div>
                 </div>
