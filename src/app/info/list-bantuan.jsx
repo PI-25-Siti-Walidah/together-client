@@ -80,7 +80,7 @@ export default function ListBantuan({ filterKategori, onDetail }) {
 
             <div className="flex items-center mt-2 gap-2">
               <div className={`text-md font-semibold px-3 py-1 rounded-full w-max
-              ${item.is_active ? "text-green-600 bg-green-100" : "text-red-100 bg-red-500"}`}>
+              ${item.is_active ? "text-green-600 bg-green-200" : "text-red-600 bg-red-200"}`}>
                 {item.is_active ? "Berlangsung" : "Berakhir"}
                 </div>
                 <span className="bg-pink-100 text-pink-600 font-semibold text-md px-3 py-1 rounded-full">
