@@ -17,7 +17,7 @@ export default function ListRiwayat({filterStatus}) {
       instansi: "Yayasan Pendidikan Kita",
       tanggalStatus: "15 Nov 2025",
       kategori: "Pendidikan Anak",
-      status: "Ditinjau",
+      status: "Diproses",
     },
     {
       id: 3,
@@ -40,13 +40,13 @@ export default function ListRiwayat({filterStatus}) {
   const badgeStatus ={
     Selesai: "badge-info",
     Diterima: "badge-success",
-    Ditinjau: "badge-warning",
+    Diproses: "badge-warning",
     Ditolak: "badge-error",
 }
 const badgeStatusIcon ={
     Selesai: Archive,
     Diterima: CheckCircle,
-    Ditinjau: Hourglass,
+    Diproses: Hourglass,
     Ditolak: CircleX,
 }
   const filterRiwayat = riwayatBantuan.filter((list) => {

@@ -1,6 +1,6 @@
 'use client'
 export default function Filter({ filterStatus, setFilterStatus }) {
-  const statusList = ["Semua", "Ditinjau", "Diterima", "Ditolak", "Selesai"];
+  const statusList = ["Semua", "Diproses", "Diterima", "Ditolak", "Selesai"];
 
   return (
     <section className="flex justify-center gap-2 flex-wrap mb-6 lg:gap-3">
