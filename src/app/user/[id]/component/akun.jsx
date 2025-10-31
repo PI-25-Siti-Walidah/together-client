@@ -28,10 +28,6 @@ export default function Akun() {
             className="input w-full" 
            />
 
-            <label className="label">Kata Sandi</label>
-            <input type="text" 
-            className="input w-full"
-            />
           </fieldset>
           <div className="justify-end card-actions">
             <button className="btn w-fit mr-5 text-[16px] font-medium bg-[#6D123F] text-white rounded-sm border-none hover:bg-pink-600">
