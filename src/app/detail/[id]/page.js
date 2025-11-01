@@ -6,7 +6,7 @@ import Deskripsi from "./component/deskripsi"
 import Daftar from "./component/daftar"
 import Testi from "./component/testi"
 
-export default function Info(){
+export default function dinfo(){
     return(
         <section className=" flex flex-col items-center m-6 lg:my-12">
             <Header />
