@@ -20,6 +20,9 @@ export default function NavbarDekstop() {
   const handleAktivitas = () => {
     router.push("/aktivitas/[id]");
   };
+  const handleUserAkun = () => {
+    router.push('/user/[id]')
+};
 
   return (
     <section className="sticky top-0 z-100">
@@ -62,7 +65,9 @@ export default function NavbarDekstop() {
             <BotMessageSquare />
             Her Ai
           </button>
-          <button className="btn btn-circle border-pink-200 bg-pink-200 hover:bg-pink-500">
+          <button 
+          onClick={handleUserAkun}
+          className="btn btn-circle border-pink-200 bg-pink-200 hover:bg-pink-500">
             <User />
           </button>
         </div>
