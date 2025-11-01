@@ -1,5 +1,6 @@
 'use client'
 import { HandHeart, CheckCircle, Hourglass,  Archive, CircleX } from "lucide-react";
+import { useRouter } from "next/navigation"
 
 export default function ListRiwayat({filterStatus}) {
   const riwayatBantuan = [
@@ -55,6 +56,11 @@ const badgeStatusIcon ={
       }
       return list.status === filterStatus;
 });
+ const router = useRouter()
+    const handleDriwayat = (id) => {
+    router.push(`/riwayat/detail/${id}`)
+
+}
 
   return (
     <section className="w-full px-6 lg:px-16">
@@ -86,13 +92,13 @@ const badgeStatusIcon ={
                 {IconComponent && <IconComponent size={16} />}
                 {list.status}
               </div>
-              <button className="btn w-fit text-[16px] font-medium bg-[#6D123F] text-white rounded-sm border-none hover:bg-pink-600">
+              <button onClick={handleDriwayat} className="btn w-fit text-[16px] font-medium bg-[#6D123F] text-white rounded-sm border-none hover:bg-pink-600">
                 Lihat
               </button>
             </div>
           </div>
         </div>
-      )})}
+      )})} 
     </section>
   );
 }
