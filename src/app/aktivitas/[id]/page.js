@@ -6,6 +6,8 @@ import Rangkuman from "./component/rangkuman"
 import Riwayat from "./component/riwayat"
 import Testimoni from "./component/testimoni"
 import { useRouter } from "next/navigation";
+import Navbar from "@/app/navbar/navbar";
+import Footer from "@/app/footer/footer";
 
 
 export default function Aktivitas(){
@@ -15,7 +17,8 @@ export default function Aktivitas(){
                 router.push('/akun')
             }
     return(
-        <section className=" flex flex-col items-center pt-16 mx-6 my-12">
+        <section >
+          <div className=" flex flex-col items-center pt-16 mx-6 my-12">
             <Greeting/>
             <button 
           onClick={handleAkun}
@@ -26,6 +29,9 @@ export default function Aktivitas(){
             <Rangkuman />
             <Riwayat />
             <Testimoni />  
+            <Navbar />
+            </div>
+            <Footer />
         </section>
     )
 }
