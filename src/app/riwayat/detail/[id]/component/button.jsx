@@ -1,11 +1,19 @@
+import { useState } from "react";
 import { Upload, MessageSquare } from "lucide-react";
+import Diterima from "./diterima";
+import Selesai from "./selesai"
+
 export default function Button(){
+    const [showModal, setShowModal] = useState(false);
     const status = "Diterima";
+
+    const handleClick = () => setShowModal(true);
+    const handleClose = () => setShowModal(false);
 
     const renderButton = () => {
         if (status === "Diterima") {
             return (
-                <button className="btn w-full md:w-150 bg-[#6D123F] rounded-xl text-white border-none hover:bg-pink-600">
+                <button onClick={handleClick} className="btn w-full md:w-150 bg-[#6D123F] rounded-xl text-white border-none hover:bg-pink-600">
                     <Upload size={18} />
                     <span>Kirim Bukti Penerimaan</span>
                 </button>
@@ -13,9 +21,9 @@ export default function Button(){
         }
         if (status === "Selesai") {
             return (
-                <button className="btn w-full md:w-150 bg-[#6D123F] rounded-xl text-white border-none hover:bg-pink-600">
+                <button onClick={handleClick} className="btn w-full md:w-150 bg-[#6D123F] rounded-xl text-white border-none hover:bg-pink-600">
                     <MessageSquare size={18} />
-                    <span>Kirim Testimoni</span>
+                    <span>Kirim Bukti Pemanfaatan Bantuan</span>
                 </button>
             );
         }
@@ -24,6 +32,8 @@ export default function Button(){
     return(
         <section className="mt-4 flex justify-center">
             {renderButton()}
+            {status === "Diterima" && showModal && <Diterima onClose={handleClose} />}
+            {status === "Selesai" && showModal && <Selesai onClose={handleClose} />}
         </section>
     )
 }
