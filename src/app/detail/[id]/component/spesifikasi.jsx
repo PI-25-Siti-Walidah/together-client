@@ -40,7 +40,7 @@ export default function Spesifikasi() {
         <div className="flex items-center justify-start gap-3 w-52 h-20 p-2.5 bg-[#FCC0C5] text-[#6D123F] rounded-md sm:w-44 lg:w-44 shadow-md">
           <Package2 className="font-bold"/>
           <div>
-          <h6 className="font-bold">Kategori</h6>
+          <h6 className="font-bold">Benefit</h6>
           <p className="text-sm">Bantuan Ekonomi</p>
           </div>
         </div>
