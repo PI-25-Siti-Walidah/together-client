@@ -17,6 +17,9 @@ export default function Modal({
   const [formData, setFormData] = useState({})
   const totalSteps = 4 
 
+  const handleNext = () => setCurrentStep(prev => Math.min(prev + 1, totalSteps));
+  const handleBack = () => setCurrentStep(prev => Math.max(prev - 1, 1));
+
   if (!onOpen) return null;
   return (
     <dialog id="" className="modal modal-open">
@@ -24,16 +27,28 @@ export default function Modal({
         <h3 className="font-bold text-lg">Formulir Pendaftaran Bantuan</h3>
         <Steper currentStep={currentStep} total={totalSteps}/>
         <form method="dialog">
-            {/* <Step1 pertanyaan={formUmum} data={formData} /> */}
-            {/* <Step2 pertanyaan={formKategori} data={formData}/> */}
-            <Step3 pertanyaan={formBantuan} data={formData}/>
+            {currentStep === 1 &&<Step1 pertanyaan={formUmum} data={formData} />}
+            {currentStep === 2 &&<Step2 pertanyaan={formKategori} data={formData}/> }
+            {currentStep === 3 &&<Step3 pertanyaan={formBantuan} data={formData}/>}
             <button 
             onClick={onClose}
             className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
             <div className="modal-action mt-6">
-              <button type="button" className="btn btn-primary rounded-sm" >
+              {currentStep > 1 && (
+              <button type="button" className="btn btn-error rounded-sm text-white" onClick={handleBack}>
+                Kembali
+              </button>
+            )}
+            {currentStep < totalSteps && (
+              <button type="button" className="btn btn-primary rounded-sm" onClick={handleNext}>
                 Lanjut
               </button>
+            )}
+            {currentStep === totalSteps && (
+              <button type="submit" className="btn btn-primary rounded-sm text-white">
+                Kirim Formulir
+              </button>
+            )}
             </div>
         </form>
       </div>
