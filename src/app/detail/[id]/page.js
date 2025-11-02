@@ -20,7 +20,7 @@ const semuaDataBantuan =
     kategori: 'Bantuan Ekonomi',
     kuota: 50,
     benefit:'Diskon 70% untuk semua sembako',
-    deskripsi: 'Program Voucher Sembako merupakan salah satu bentuk bantuan ekonomi...',
+    deskripsi: ' Program Voucher Sembako merupakan salah satu bentuk bantuan ekonomi yang diberikan kepada keluarga kurang mampu, khususnya perempuan kepala rumah tangga. Program ini bertujuan untuk meringankan beban kebutuhan pokok sehari-hari dan meningkatkan ketahanan pangan keluarga. Setiap penerima bantuan berhak mendapatkan voucher senilai Rp 500.000 yang dapat ditukarkan dengan kebutuhan pokok (beras, minyak goreng, telur, gula, dll.) di minimarket maupun pasar tradisional yang telah bekerja sama dengan ToGetHer. Dengan adanya program ini, diharapkan keluarga penerima tidak hanya dapat memenuhi kebutuhan dasar, tetapi juga memiliki kesempatan untuk lebih fokus pada pengembangan keluarga, pendidikan anak, serta peningkatan kualitas hidup.',
     syarat:  [
             "Berstatus keluarga kurang mampu dengan penghasilan di bawah Rp2.000.000 per bulan.",
             "Memiliki KTP dan KK yang masih berlaku.",
@@ -56,7 +56,7 @@ const testimoni = [
             <Header judul={bantuan.judul} foto={bantuan.foto}/>
             <Spesifikasi bantuan={bantuan} />
             <div className="lg:flex lg:gap-3">
-                <Deskripsi />
+                <Deskripsi deskripsi={bantuan.deskripsi} syarat={bantuan.syarat}/>
                 <div>
                     <Daftar />
                     <Testi />  
