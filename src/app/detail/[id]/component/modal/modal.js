@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Step1 from "./step1";
 import Step2 from "./step2";
+import Step3 from "./step3";
 import Steper from "./steper";
 
 export default function Modal({
@@ -24,7 +25,8 @@ export default function Modal({
         <Steper currentStep={currentStep} total={totalSteps}/>
         <form method="dialog">
             {/* <Step1 pertanyaan={formUmum} data={formData} /> */}
-            <Step2 pertanyaan={formKategori} data={formData}/>
+            {/* <Step2 pertanyaan={formKategori} data={formData}/> */}
+            <Step3 pertanyaan={formBantuan} data={formData}/>
             <button 
             onClick={onClose}
             className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
