@@ -95,7 +95,7 @@ const testimoni = [
                 </div>
             </div>
             <Modal
-            isOpen={isModalOpen}
+            onOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
             formUmum={formUmum}
             formKategori={formKategori}
