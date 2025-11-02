@@ -8,15 +8,17 @@ import Daftar from "./component/daftar"
 import Testi from "./component/testi"
 
 export default function dinfo(){
+const [isModalOpen, setIsModalOpen] = useState(false);
+
 const semuaDataBantuan = 
     {
-    id:"1",
+    id:1,
     judul: 'Voucher Sembako',
     foto: '/beranda/bantuan.jpg',
     isActive:'Berlangsung',
     periodeMulai: '20 Nov 2025',
     periodeSelesai:'7 Nov 2025',
-    mitra: 'Yayasan Indonesia Emas',
+    mitra: "Yayasan Peduli Bangsa",
     kategori: 'Bantuan Ekonomi',
     kuota: 50,
     benefit:'Diskon 70% untuk semua sembako',
@@ -26,7 +28,23 @@ const semuaDataBantuan =
             "Memiliki KTP dan KK yang masih berlaku.",
             "Belum menerima bantuan serupa dari program pemerintah/lembaga lain dalam periode yang sama.",
             "Voucher hanya berlaku pada periode program yang telah ditentukan dan tidak dapat diuangkan.",
-    ]}
+    ]
+}
+
+const formKategori = [
+    { id: '1', label: 'Jumlah anggota keluarga bekerja', type: 'number', required: true },
+    { id: '2', label: 'Total penghasilan keluarga per bulan', type: 'number', required: true },
+    { id: '3', label: 'Pengeluaran rutin (sewa, listrik, sekolah, makan)', type: 'number', required: true },
+    { id: '4', label: 'Kendala ekonomi paling mendesak', type: 'text', required: true },
+    { id: '5', label: 'Apakah ada anggota keluarga yang sakit menahun / disabilitas?', type: 'bolean', required: true },
+]
+
+const formBantuan = [
+    { id: '1', label: 'Apa kebutuhan pangan utama (beras, lauk, sayur)?', type: 'text', required: true },
+    { id: '2', label: 'Akses tempat pengambilan bantuan?', type: 'text', required: true },
+    { id: '3', label: 'Dalam sebulan terakhir, adakah hari di mana keluarga makan kurang dari 2 kali sehari?', type: 'text', required: true },
+    { id: '4', label: 'Apakah lokasi tempat tinggal sulit dijangkau untuk pembelian bahan pokok (pasar jauh, transportasi sulit)?', type: 'text', required: true },
+]
 
 const testimoni = [
     {
@@ -58,7 +76,12 @@ const testimoni = [
             <div className="lg:flex lg:gap-3">
                 <Deskripsi deskripsi={bantuan.deskripsi} syarat={bantuan.syarat}/>
                 <div>
-                    <Daftar />
+                    <Daftar 
+                    formKategori={formKategori} 
+                    formBantuan={formBantuan}  
+                    isModalOpen={isModalOpen}
+                    onOpen={() => setIsModalOpen(true)}
+                    onClose={() => setIsModalOpen(false)}/>
                     <Testi testimoni={testimoni}/>  
                 </div>
             </div>
