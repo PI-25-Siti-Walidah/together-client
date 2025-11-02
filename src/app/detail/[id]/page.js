@@ -59,7 +59,7 @@ const testimoni = [
                 <Deskripsi deskripsi={bantuan.deskripsi} syarat={bantuan.syarat}/>
                 <div>
                     <Daftar />
-                    <Testi />  
+                    <Testi testimoni={testimoni}/>  
                 </div>
             </div>
         </section>

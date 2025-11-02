@@ -1,15 +1,4 @@
 export default function Deskripsi({deskripsi, syarat}) {
-// const isi = [
-//     {
-//         syarat: [
-//             "Berstatus keluarga kurang mampu dengan penghasilan di bawah Rp2.000.000 per bulan.",
-//             "Memiliki KTP dan KK yang masih berlaku.",
-//             "Belum menerima bantuan serupa dari program pemerintah/lembaga lain dalam periode yang sama.",
-//             "Voucher hanya berlaku pada periode program yang telah ditentukan dan tidak dapat diuangkan.",
-//         ],
-        
-//     },
-// ]
 
   return (
     <section className="mt-3 ">
