@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Step1 from "./step1";
+import Step2 from "./step2";
 import Steper from "./steper";
 
 export default function Modal({
@@ -9,6 +10,7 @@ export default function Modal({
   formUmum,
   formKategori,
   formBantuan,
+  bantuan
 }) {
   const [currentStep, setCurrentStep] = useState(1)
   const [formData, setFormData] = useState({})
@@ -21,7 +23,8 @@ export default function Modal({
         <h3 className="font-bold text-lg">Formulir Pendaftaran Bantuan</h3>
         <Steper currentStep={currentStep} total={totalSteps}/>
         <form method="dialog">
-            <Step1 pertanyaan={formUmum} data={formData} />
+            {/* <Step1 pertanyaan={formUmum} data={formData} /> */}
+            <Step2 pertanyaan={formKategori} data={formData}/>
             <button 
             onClick={onClose}
             className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>

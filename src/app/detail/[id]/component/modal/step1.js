@@ -1,7 +1,7 @@
 export default function Step1({pertanyaan, data}){
     return(
         <section className="my-4 px-6">
-            <h3 className="font-semibold text-center">Data Diri & Umum</h3>
+            <h3 className="font-semibold text-center mb-1.5">Data Diri & Umum</h3>
             {pertanyaan.map((pertanyaan)=> (
                 <fieldset key={pertanyaan.id} className="fieldset mb-3">
                     <legend className="fieldset-legend">{pertanyaan.label}</legend>
