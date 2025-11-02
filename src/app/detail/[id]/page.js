@@ -1,6 +1,6 @@
 "use client";
 
-import { useStateolk } from "react";
+import { useState } from "react";
 import Header from "./component/header"
 import Spesifikasi from "./component/spesifikasi"
 import Deskripsi from "./component/deskripsi"
@@ -8,7 +8,7 @@ import Daftar from "./component/daftar"
 import Testi from "./component/testi"
 
 export default function dinfo(){
-const semuaDataBantuan = [
+const semuaDataBantuan = 
     {
     id:"1",
     judul: 'Voucher Sembako',
@@ -26,9 +26,7 @@ const semuaDataBantuan = [
             "Memiliki KTP dan KK yang masih berlaku.",
             "Belum menerima bantuan serupa dari program pemerintah/lembaga lain dalam periode yang sama.",
             "Voucher hanya berlaku pada periode program yang telah ditentukan dan tidak dapat diuangkan.",
-    ]},
-    // data bantuan lain
-]
+    ]}
 
 const testimoni = [
     {
@@ -51,9 +49,11 @@ const testimoni = [
     },
   ];
 
+  const bantuan = semuaDataBantuan
+
     return(
         <section className=" flex flex-col items-center m-6 lg:my-12">
-            <Header />
+            <Header judul={bantuan.judul} foto={bantuan.foto}/>
             <Spesifikasi />
             <div className="lg:flex lg:gap-3">
                 <Deskripsi />
