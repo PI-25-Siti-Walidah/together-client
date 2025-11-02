@@ -34,7 +34,7 @@ const semuaDataBantuan =
 
 const formUmum =[
     { id: '1', label: 'NIK / Nomor KTP', type: 'number', required: true },
-    { id: '2', label: 'Status tempat tinggal', type: 'select', required: true },
+    { id: '2', label: 'Status tempat tinggal', type: 'select', required: true, options: ['Pilih status...', 'Milik Sendiri', 'Sewa/Kontrak', 'Menumpang'] },
     { id: '3', label: 'Usia', type: 'number', required: true },
     { id: '4', label: 'Jumlah tanggungan', type: 'text', required: true },
     { id: '5', label: 'Pekerjaan utama saat ini', type: 'text', required: true },
