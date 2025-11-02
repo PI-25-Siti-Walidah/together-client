@@ -54,7 +54,7 @@ const testimoni = [
     return(
         <section className=" flex flex-col items-center m-6 lg:my-12">
             <Header judul={bantuan.judul} foto={bantuan.foto}/>
-            <Spesifikasi />
+            <Spesifikasi bantuan={bantuan} />
             <div className="lg:flex lg:gap-3">
                 <Deskripsi />
                 <div>
