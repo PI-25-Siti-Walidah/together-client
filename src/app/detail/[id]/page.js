@@ -6,6 +6,7 @@ import Spesifikasi from "./component/spesifikasi"
 import Deskripsi from "./component/deskripsi"
 import Daftar from "./component/daftar"
 import Testi from "./component/testi"
+import Modal from "./component/modal/modal.js";
 
 export default function dinfo(){
 const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,6 +31,18 @@ const semuaDataBantuan =
             "Voucher hanya berlaku pada periode program yang telah ditentukan dan tidak dapat diuangkan.",
     ]
 }
+
+const formUmum =[
+    { id: '1', label: 'NIK / Nomor KTP', type: 'number', required: true },
+    { id: '2', label: 'Status tempat tinggal', type: 'select', required: true },
+    { id: '3', label: 'Usia', type: 'number', required: true },
+    { id: '4', label: 'Jumlah tanggungan', type: 'text', required: true },
+    { id: '5', label: 'Pekerjaan utama saat ini', type: 'text', required: true },
+    { id: '6', label: 'Pendapatan rata-rata per bulan', type: 'number', required: true },
+    { id: '7', label: 'Foto Kartu Keluarga (KK)', type: 'file', required: true },
+    { id: '8', label: 'Foto SKTM', type: 'file', required: true },
+    { id: '9', label: 'Foto Surat Pendapatan', type: 'file', required: true },
+]
 
 const formKategori = [
     { id: '1', label: 'Jumlah anggota keluarga bekerja', type: 'number', required: true },
@@ -77,14 +90,18 @@ const testimoni = [
                 <Deskripsi deskripsi={bantuan.deskripsi} syarat={bantuan.syarat}/>
                 <div>
                     <Daftar 
-                    formKategori={formKategori} 
-                    formBantuan={formBantuan}  
-                    isModalOpen={isModalOpen}
-                    onOpen={() => setIsModalOpen(true)}
-                    onClose={() => setIsModalOpen(false)}/>
+                    onOpen={() => setIsModalOpen(true)}/>
                     <Testi testimoni={testimoni}/>  
                 </div>
             </div>
+            <Modal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            formUmum={formUmum}
+            formKategori={formKategori}
+            formBantuan={formBantuan}
+            bantuan={bantuan}
+            />
         </section>
     )
 }
