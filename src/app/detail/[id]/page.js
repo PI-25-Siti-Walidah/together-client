@@ -33,30 +33,30 @@ const semuaDataBantuan =
 }
 
 const formUmum =[
-    { id: '1', label: 'NIK / Nomor KTP', type: 'number', required: true },
-    { id: '2', label: 'Status tempat tinggal', type: 'select', required: true, options: ['Pilih status...', 'Milik Sendiri', 'Sewa/Kontrak', 'Menumpang'] },
-    { id: '3', label: 'Usia', type: 'number', required: true },
-    { id: '4', label: 'Jumlah tanggungan', type: 'text', required: true },
-    { id: '5', label: 'Pekerjaan utama saat ini', type: 'text', required: true },
-    { id: '6', label: 'Pendapatan rata-rata per bulan', type: 'number', required: true },
-    { id: '7', label: 'Foto Kartu Keluarga (KK)', type: 'file', required: true },
-    { id: '8', label: 'Foto SKTM', type: 'file', required: true },
-    { id: '9', label: 'Foto Surat Pendapatan', type: 'file', required: true },
+    { id: 'u1', label: 'NIK / Nomor KTP', type: 'number', required: true },
+    { id: 'u2', label: 'Status tempat tinggal', type: 'select', required: true, options: ['Pilih status...', 'Milik Sendiri', 'Sewa/Kontrak', 'Menumpang'] },
+    { id: 'u3', label: 'Usia', type: 'number', required: true },
+    { id: 'u4', label: 'Jumlah tanggungan', type: 'text', required: true },
+    { id: 'u5', label: 'Pekerjaan utama saat ini', type: 'text', required: true },
+    { id: 'u6', label: 'Pendapatan rata-rata per bulan', type: 'number', required: true },
+    { id: 'u7', label: 'Foto Kartu Keluarga (KK)', type: 'file', required: true },
+    { id: 'u8', label: 'Foto SKTM', type: 'file', required: true },
+    { id: 'u9', label: 'Foto Surat Pendapatan', type: 'file', required: true },
 ]
 
 const formKategori = [
-    { id: '1', label: 'Jumlah anggota keluarga bekerja', type: 'number', required: true },
-    { id: '2', label: 'Total penghasilan keluarga per bulan', type: 'number', required: true },
-    { id: '3', label: 'Pengeluaran rutin (sewa, listrik, sekolah, makan)', type: 'number', required: true },
-    { id: '4', label: 'Kendala ekonomi paling mendesak', type: 'text', required: true },
-    { id: '5', label: 'Apakah ada anggota keluarga yang sakit menahun / disabilitas?', type: 'bolean', required: true },
+    { id: 'k1', label: 'Jumlah anggota keluarga bekerja', type: 'number', required: true },
+    { id: 'k2', label: 'Total penghasilan keluarga per bulan', type: 'number', required: true },
+    { id: 'k3', label: 'Pengeluaran rutin (sewa, listrik, sekolah, makan)', type: 'text', required: true },
+    { id: 'k4', label: 'Kendala ekonomi paling mendesak', type: 'text', required: true },
+    { id: 'k5', label: 'Apakah ada anggota keluarga yang sakit menahun / disabilitas?', type: 'bolean', required: true },
 ]
 
 const formBantuan = [
-    { id: '1', label: 'Apa kebutuhan pangan utama (beras, lauk, sayur)?', type: 'text', required: true },
-    { id: '2', label: 'Akses tempat pengambilan bantuan?', type: 'text', required: true },
-    { id: '3', label: 'Dalam sebulan terakhir, adakah hari di mana keluarga makan kurang dari 2 kali sehari?', type: 'text', required: true },
-    { id: '4', label: 'Apakah lokasi tempat tinggal sulit dijangkau untuk pembelian bahan pokok (pasar jauh, transportasi sulit)?', type: 'text', required: true },
+    { id: 'b1', label: 'Apa kebutuhan pangan utama (beras, lauk, sayur)?', type: 'text', required: true },
+    { id: 'b2', label: 'Akses tempat pengambilan bantuan?', type: 'text', required: true },
+    { id: 'b3', label: 'Dalam sebulan terakhir, adakah hari di mana keluarga makan kurang dari 2 kali sehari?', type: 'text', required: true },
+    { id: 'b4', label: 'Apakah lokasi tempat tinggal sulit dijangkau untuk pembelian bahan pokok (pasar jauh, transportasi sulit)?', type: 'text', required: true },
 ]
 
 const testimoni = [

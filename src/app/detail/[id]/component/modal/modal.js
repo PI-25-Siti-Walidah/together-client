@@ -3,6 +3,7 @@ import { useState } from "react";
 import Step1 from "./step1";
 import Step2 from "./step2";
 import Step3 from "./step3";
+import Step4 from "./step4";
 import Steper from "./steper";
 
 export default function Modal({
@@ -20,16 +21,41 @@ export default function Modal({
   const handleNext = () => setCurrentStep(prev => Math.min(prev + 1, totalSteps));
   const handleBack = () => setCurrentStep(prev => Math.max(prev - 1, 1));
 
+  const handleInputChange = (e) => {
+    const { id, value, type, files } = e.target;
+    let dataBaru; 
+    
+    if (type === 'file') {
+        dataBaru = files[0];
+    } else {
+        dataBaru = value; 
+    }
+    setFormData(prev => ({
+        ...prev,
+        [id]: dataBaru 
+    }));
+};
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Data Pendaftaran Final:", formData);
+    alert("Pendaftaran berhasil dikirim!");
+    setFormData({});  
+    setCurrentStep(1);
+    onClose(); 
+  };
+
   if (!onOpen) return null;
   return (
     <dialog id="" className="modal modal-open">
-      <div className="modal-box h-4/5 p-11">
+      <div className="modal-box h-4/5 md:w-300 p-9">
         <h3 className="font-bold text-lg">Formulir Pendaftaran Bantuan</h3>
         <Steper currentStep={currentStep} total={totalSteps}/>
-        <form method="dialog">
-            {currentStep === 1 &&<Step1 pertanyaan={formUmum} data={formData} />}
-            {currentStep === 2 &&<Step2 pertanyaan={formKategori} data={formData}/> }
-            {currentStep === 3 &&<Step3 pertanyaan={formBantuan} data={formData}/>}
+        <form onSubmit={handleSubmit}>
+            {currentStep === 1 &&<Step1 pertanyaan={formUmum} data={formData} handleChange={handleInputChange}/>}
+            {currentStep === 2 &&<Step2 pertanyaan={formKategori} data={formData} handleChange={handleInputChange}/> }
+            {currentStep === 3 &&<Step3 pertanyaan={formBantuan} data={formData} handleChange={handleInputChange}/>}
+            {currentStep === 4 &&<Step4 data={formData} bantuan={bantuan}/>}
             <button 
             onClick={onClose}
             className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>

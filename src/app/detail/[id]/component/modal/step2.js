@@ -1,4 +1,4 @@
-export default function Step2({pertanyaan, data}){
+export default function Step2({pertanyaan, data, handleChange}){
     return(
         <section>
             <section className="my-4 px-6">
@@ -8,8 +8,12 @@ export default function Step2({pertanyaan, data}){
                     <legend className="fieldset-legend">{pertanyaan.label}</legend>
                     <input 
                     type={pertanyaan.type} 
+                    id={pertanyaan.id}
+                    name={pertanyaan.id}
                     className={`input input-primary h-10 w-full ${pertanyaan.type === 'file' ? 'file-input file-input-primary' : ''}`}
-                    required={pertanyaan.required} />
+                    required={pertanyaan.required} 
+                    value={pertanyaan.type !== 'file' ? data[pertanyaan.id] || '' : undefined}
+                    onChange={handleChange}/>
                 </fieldset>
             ))}
         </section>
