@@ -2,16 +2,24 @@
 import Filter from "./filter"
 import ListBantuan from "./list-bantuan"
 import { useRouter } from "next/navigation"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Navbar from "../navbar/navbar"
+import { useBantuanStore } from "@/lib/store/bantuanStore";
 
 export default function Info(){
      const router = useRouter();
 
       const [filterKategori, setFilterKategori] = useState("Semua");
 
-        const handleDetail = () => {
-        router.push('/detail/[id]')}
+       // ambil data dari store
+       const { fetchBantuan } = useBantuanStore();
+       
+       useEffect(() => {
+        fetchBantuan();
+    }, [fetchBantuan]);
+
+        const handleDetail = (id) => {
+        router.push('/info/$[id]')}
 
     return(
         <div>
