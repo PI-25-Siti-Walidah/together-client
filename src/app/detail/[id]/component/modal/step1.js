@@ -9,10 +9,11 @@ export default function Step1({pertanyaan, data, handleChange}){
                     type={pertanyaan.type} 
                     id={pertanyaan.id}
                     name={pertanyaan.id}
-                    className={`input input-primary h-10 w-full ${pertanyaan.type === 'file' ? 'file-input file-input-primary' : ''}`}
+                    className={`input h-10 w-full border rounded-md`}
                     required={pertanyaan.required} 
                     value={pertanyaan.type !== 'file' ? data[pertanyaan.id] || '' : undefined}
-                    onChange={handleChange}/>
+                    onChange={handleChange}
+                    placeholder="Klik disini untuk mengisi formulir"/>
                 </fieldset>
             ))}
         </section>
