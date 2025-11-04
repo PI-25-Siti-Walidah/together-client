@@ -49,7 +49,7 @@ const formKategori = [
     { id: 'k2', label: 'Total penghasilan keluarga per bulan', type: 'number', required: true },
     { id: 'k3', label: 'Pengeluaran rutin (sewa, listrik, sekolah, makan)', type: 'text', required: true },
     { id: 'k4', label: 'Kendala ekonomi paling mendesak', type: 'text', required: true },
-    { id: 'k5', label: 'Apakah ada anggota keluarga yang sakit menahun / disabilitas?', type: 'bolean', required: true },
+    { id: 'k5', label: 'Apakah ada anggota keluarga yang sakit menahun / disabilitas?', type: 'radio', required: true },
 ]
 
 const formBantuan = [

@@ -22,13 +22,21 @@ export default function Modal({
   const handleBack = () => setCurrentStep(prev => Math.max(prev - 1, 1));
 
   const handleInputChange = (e) => {
-    const { id, value, type, files } = e.target;
+    const { id, value, type, files, checked } = e.target;
     let dataBaru; 
     
     if (type === 'file') {
         dataBaru = files[0];
+    } else if (type === 'checkbox') {
+      dataBaru = checked; 
+    } else if (type === 'radio' && (value === 'true' || value === 'false')) {
+      dataBaru = (value === 'true');
     } else {
-        dataBaru = value; 
+        if (type === 'number' && Number(value) < 0) {
+            dataBaru = '0';
+          } else {
+            dataBaru = value;
+        }
     }
     setFormData(prev => ({
         ...prev,
@@ -61,12 +69,12 @@ export default function Modal({
             className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
             <div className="modal-action mt-6">
               {currentStep > 1 && (
-              <button type="button" className="btn btn-error rounded-sm text-white" onClick={handleBack}>
+              <button type="button" className="btn bg-gray-300 rounded-lg text-sm" onClick={handleBack}>
                 Kembali
               </button>
             )}
             {currentStep < totalSteps && (
-              <button type="button" className="btn btn-primary rounded-sm" onClick={handleNext}>
+              <button type="button" className="btn bg-[#6D123F] rounded-xl text-white border-none hover:bg-pink-600" onClick={handleNext}>
                 Lanjut
               </button>
             )}
