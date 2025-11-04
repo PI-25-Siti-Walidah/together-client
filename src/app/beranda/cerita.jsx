@@ -28,8 +28,8 @@ export default function Cerita() {
   const prevSlide = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length)
 
   return (
-    <section className="py-12">
-      <div className="max-w-3xl lg:max-w-5xl mx-auto text-center mb-8">
+    <section className="py-12 mt-11">
+      <div className="max-w-3xl lg:max-w-5xl mx-auto text-center">
         <div className="text-3xl font-bold lg:max-w-5xl text-[#6D123F] mb-4 text-balance">Cerita dari Perempuan Tangguh</div>
         <p className="text-gray-600 min-w-lg lg:max-w-5xl mb-8 text-balance">
           Dengarkan bagaimana dukungan kami membantu mereka meningkatkan kesejahteraan keluarga.

@@ -13,7 +13,7 @@ export default function Media(){
     ]
     
     return(
-        <section className="py-12">
+        <section className="py-12 mt-11">
             <div className="max-w-3xl lg:max-w-5xl mx-auto text-center mb-8">
                 <div className="text-3xl font-bold lg:max-w-5xl text-[#6D123F] mb-4 text-balance">Media Partners</div>
             </div>

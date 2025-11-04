@@ -1,6 +1,15 @@
+"use client";
+import { useRouter } from "next/navigation";
+
 export default function Hero() {
+  const router = useRouter();
+  
+  const handleInfo = () => {
+    router.push("/info");
+  };
+
   return (
-    <section>
+    <section className="lg:mt-[85px]">
       <div
         className="hero min-h-screen"
         style={{
@@ -8,20 +17,22 @@ export default function Hero() {
         }}
       >
         <div className="hero-overlay"></div>
-        <div className="hero-content text-neutral-content text-center flex flex-col">
-          <div className="px-5 py-2 mb-4 backdrop-blur-md rounded-2xl bg-white/10 text-white font-semibold">
+        <div className="hero-content w-full text-neutral-content text-center flex flex-col items-center justify-center gap-8 lg:my-20">
+          <div className="backdrop-blur-md rounded-xl bg-white/10 text-white font-semibold">
             2.5 Juta Janda telah Terbantu
           </div>
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold text-white">
+          <div className="max-w-md flex flex-col items-center gap-8">
+            <h1 className="text-4xl font-bold text-white">
               We Get Her the <br />
               <span className="text-[#FCC0C5]">Support She Deserves</span>
             </h1>
-            <p className="mb-5">
+            <p className="text-balance">
               ToGetHer hadir untuk menyalurkan bantuan sosial, pendidikan, dan
               kesehatan bagi perempuan yang membutuhkan
             </p>
-            <button className="btn md:btn-lg xl:btn rounded-sm bg-[#6D123F] text-white text-lg border-none">
+            <button 
+            onClick={handleInfo}
+            className="btn w-fit btn-md rounded-sm bg-[#6D123F] text-white text-sm border-none hover:bg-white hover:border-white hover:text-[#6D123F]">
               Cari Bantuan
             </button>
           </div>
