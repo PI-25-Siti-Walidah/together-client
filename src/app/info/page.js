@@ -18,8 +18,8 @@ export default function Info(){
         fetchBantuan();
     }, [fetchBantuan]);
 
-        const handleDetail = () => {
-        router.push('/detail/$[id]')}
+        const handleDetail = (id) => {
+        router.push('/info/$[id]')}
 
     return(
         <div>
