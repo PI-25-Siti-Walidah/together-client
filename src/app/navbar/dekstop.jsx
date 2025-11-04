@@ -42,23 +42,23 @@ export default function NavbarDekstop() {
         <div className="navbar-end hidden lg:flex gap-3">
           <button 
           onClick={handleBeranda}
-          className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#FCC0C5] hover:border-[#FCC0C5] hover:text-white">
+          className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#6D123F] hover:rounded-md hover:border-[#6D123F] hover:text-white">
             Beranda
           </button>
           <button
             onClick={handleInfo}
-            className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#FCC0C5] hover:border-[#FCC0C5] hover:text-white"
+            className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#6D123F] hover:rounded-md hover:border-[#6D123F] hover:text-white"
           >
             Bantuan
           </button>
           <button 
           onClick={handleCerita}
-          className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#FCC0C5] hover:border-[#FCC0C5] hover:text-white">
+          className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#6D123F] hover:rounded-md hover:border-[#6D123F] hover:text-white">
             Cerita
           </button>
           <button 
           onClick={handleAktivitas}
-          className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#FCC0C5] hover:border-[#FCC0C5] hover:text-white">
+          className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#6D123F] hover:rounded-md hover:border-[#6D123F] hover:text-white">
             Aktivitas
           </button>
           <button className="btn border-none rounded-sm bg-pink-200 hover:bg-pink-500 hover:text-white">
