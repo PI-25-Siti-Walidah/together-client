@@ -49,16 +49,10 @@
 //     </section>
 //   );
 // }
-import { Star, CalendarClock } from "lucide-react";
+import { UsersRound, Building2, CalendarClock } from "lucide-react";
 
 export default function Card({ item }) {
   if (!item) return null;
-
-  const tanggalMulai = new Date(item.periode_mulai).toLocaleDateString("id-ID", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  });
 
   const tanggalAkhir = new Date(item.periode_berakhir).toLocaleDateString("id-ID", {
     day: "numeric",
@@ -68,7 +62,7 @@ export default function Card({ item }) {
 
   return (
     <section>
-      <div className="card bg-base-100 w-80 shadow-sm hover:shadow-md transition-all duration-200">
+      <div className="card bg-base-100 w-80 shadow-sm hover:shadow-md rounded-lg transition-all duration-200">
         <figure className="rounded-t-lg overflow-hidden">
           <img
             src={item.foto || "/beranda/bantuan.jpg"}
@@ -77,10 +71,19 @@ export default function Card({ item }) {
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title font-bold text-lg text-gray-800 line-clamp-2">
+          <h2 className="card-title font-bold text-lg h-14 text-gray-800 line-clamp-2">
             {item.judul}
           </h2>
           <div className="flex items-center gap-1">
+            {item.mitra_id?.logo ? (
+              <img
+                src={item.mitra_id.logo}
+                alt={item.mitra_id?.nama}
+                className="w-6 h-6 rounded-full object-contain border border-gray-200"
+              />
+            ) : (
+              <div className="w-6 h-6 bg-gray-200 rounded-full" />
+            )}
             <h3 className="text-sm text-gray-500">
               {item.mitra_id?.nama || "Tanpa Mitra"}
             </h3>
@@ -89,16 +92,16 @@ export default function Card({ item }) {
             <div className="flex items-center gap-1">
               <CalendarClock className="w-4 h-4" />
               <p>
-                {tanggalMulai} - {tanggalAkhir}
+                {tanggalAkhir}
               </p>
             </div>
             <div className="flex items-center gap-1">
-              <Star className="w-4 h-4 text-amber-300" />
+              <UsersRound className="w-4 h-4 text-gray-600" />
               <p>{item.jumlah_penerima} penerima</p>
             </div>
           </div>
           <div className="card-actions items-center justify-end flex gap-2 mt-7">
-            <div className="badge badge-soft badge-secondary p-2 text-xs">
+            <div className="badge bg-pink-200 text-pink-700 badge-secondary p-2 text-xs">
               {item.kategori_id?.nama_kategori || "Bantuan"}
             </div>
             <button className="btn btn-sm rounded-sm bg-[#6D123F] text-white border-none">
