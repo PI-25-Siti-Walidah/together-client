@@ -22,11 +22,15 @@ export default function Modal({
   const handleBack = () => setCurrentStep(prev => Math.max(prev - 1, 1));
 
   const handleInputChange = (e) => {
-    const { id, value, type, files } = e.target;
+    const { id, value, type, files, checked } = e.target;
     let dataBaru; 
     
     if (type === 'file') {
         dataBaru = files[0];
+    } else if (type === 'checkbox') {
+      dataBaru = checked; 
+    } else if (type === 'radio' && (value === 'true' || value === 'false')) {
+      dataBaru = (value === 'true');
     } else {
         if (type === 'number' && Number(value) < 0) {
             dataBaru = '0';
