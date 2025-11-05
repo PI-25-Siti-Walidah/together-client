@@ -17,9 +17,42 @@ export default function Modal({
   const [currentStep, setCurrentStep] = useState(1)
   const [formData, setFormData] = useState({})
   const totalSteps = 4 
+  const [errors, setErrors] = useState ({})
 
-  const handleNext = () => setCurrentStep(prev => Math.min(prev + 1, totalSteps));
-  const handleBack = () => setCurrentStep(prev => Math.max(prev - 1, 1));
+  const handleNext = () => {
+    if(validate()){
+    setErrors({});
+    setCurrentStep(prev => Math.min(prev + 1, totalSteps))
+  }};
+  const handleBack = () => {
+    setErrors({});
+    setCurrentStep(prev => Math.max(prev - 1, 1))
+  };
+
+  const validate = () => {
+    let tempErrors = {}; 
+        if (currentStep === 1) tempErrors = formUmum;
+        else if (currentStep === 2) tempErrors = formKategori;
+        else if (currentStep === 3) tempErrors = formBantuan;
+        else return true;
+
+        let newErrors = {};
+        let isValid = true;
+
+        for (const field of tempErrors) {
+          if (formData[field.id] === undefined) {
+            isValid = false;
+            newErrors[field.id] = `${field.label} harus diisi.`;
+          } 
+          else if (field.type === 'select' && formData[field.id] === 'Pilih status...') {
+            isValid = false;
+            newErrors[field.id] = `${field.label} harus diisi.`;
+          }
+        }
+
+        setErrors(newErrors); 
+        return isValid;
+  };
 
   const handleInputChange = (e) => {
     const { id, value, type, files, checked } = e.target;
@@ -38,6 +71,15 @@ export default function Modal({
             dataBaru = value;
         }
     }
+
+    if (errors[id]) {
+    setErrors(prevErrors => {
+      const newErrors = { ...prevErrors };
+      delete newErrors[id];
+      return newErrors;
+    });
+  }
+
     setFormData(prev => ({
         ...prev,
         [id]: dataBaru 
@@ -60,9 +102,9 @@ export default function Modal({
         <h3 className="font-bold text-lg">Formulir Pendaftaran Bantuan</h3>
         <Steper currentStep={currentStep} total={totalSteps}/>
         <form onSubmit={handleSubmit}>
-            {currentStep === 1 &&<Step1 pertanyaan={formUmum} data={formData} handleChange={handleInputChange}/>}
-            {currentStep === 2 &&<Step2 pertanyaan={formKategori} data={formData} handleChange={handleInputChange}/> }
-            {currentStep === 3 &&<Step3 pertanyaan={formBantuan} data={formData} handleChange={handleInputChange}/>}
+            {currentStep === 1 &&<Step1 pertanyaan={formUmum} data={formData} handleChange={handleInputChange} errors={errors}/>}
+            {currentStep === 2 &&<Step2 pertanyaan={formKategori} data={formData} handleChange={handleInputChange} errors={errors}/> }
+            {currentStep === 3 &&<Step3 pertanyaan={formBantuan} data={formData} handleChange={handleInputChange} errors={errors}/>}
             {currentStep === 4 &&<Step4 data={formData} bantuan={bantuan}/>}
             <button 
             onClick={onClose}
