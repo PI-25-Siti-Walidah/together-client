@@ -23,7 +23,7 @@ export default function Info() {
   };
 
   return (
-    <div>
+    <div className="bg-[#FFF9F7]">
       <Navbar />
       <main className="px-4 pt-30 pb-16 max-w-2xl mx-auto">
         <div>
