@@ -4,7 +4,7 @@ import {
   HandCoins,
   BotMessageSquare,
   Star,
-  Activity,
+  Activity, User
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -29,8 +29,35 @@ export default function Mobile() {
   const handleHerAi = () => {
     router.push("/her-ai");
   };
+    const handleUserAkun = () => {
+    router.push("/user/[id]");
+  };
 
   return (
+    <section>
+    <div className="navbar shadow-sm px-6 py-5 bg-[#FFF9F7] fixed top-0 left-0 right-0 z-50">
+      <div className="navbar-start gap-3">
+          <img
+            src="/beranda/logo.png"
+            alt="Logo-together"
+            className="w-6 h-6"
+          />
+          <a className="text-xl font-semibold">
+            <span className="text-[#313131]">To</span>
+            <span className="text-[#6D123F]">Get</span>
+            <span className="text-[#313131]">Her</span>
+          </a>
+        </div>
+        <div className="navbar-end gap-3">
+          <button
+            onClick={handleUserAkun}
+            className="btn btn-circle border-pink-200 bg-pink-200 hover:bg-pink-500"
+          >
+            <User className="w-5 h-5" />
+          </button>
+        </div>
+    </div>
+    <div className="fixed bottom-0 left-0 right-0 z-50">
     <div className="dock flex justify-around bg-[#6D123F] items-center py-2">
       <button
         onClick={handleBeranda}
@@ -72,5 +99,7 @@ export default function Mobile() {
         <span className="dock-label text-xs mt-1">Aktivitas</span>
       </button>
     </div>
+    </div>
+    </section>
   );
 }

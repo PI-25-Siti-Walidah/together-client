@@ -36,6 +36,14 @@ export default function ListRiwayat({filterStatus}) {
       kategori: "Ekonomi",
       status: "Ditolak",
     },
+    {
+      id: 5,
+      judul: "Program Sembako Sehat",
+      instansi: "GreenLab Rumah",
+      tanggalStatus: "25 Okt 2025",
+      kategori: "Ekonomi",
+      status: "Diterima",
+    },
   ];
 
   const badgeStatus ={
@@ -58,7 +66,7 @@ const badgeStatusIcon ={
 });
  const router = useRouter()
     const handleDriwayat = (id) => {
-    router.push(`/riwayat/detail/${id}`)
+    router.push(`/riwayat/${id}`)
 
 }
 
