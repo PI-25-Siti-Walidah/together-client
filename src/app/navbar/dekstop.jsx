@@ -8,7 +8,7 @@ export default function NavbarDekstop() {
   const handleBeranda = () => {
     router.push("/");
   };
-  
+
   const handleInfo = () => {
     router.push("/info");
   };
@@ -21,8 +21,12 @@ export default function NavbarDekstop() {
     router.push("/aktivitas/[id]");
   };
   const handleUserAkun = () => {
-    router.push('/user/[id]')
-};
+    router.push("/user/[id]");
+  };
+
+  const handleHerAi = () => {
+    router.push("/her-ai");
+  };
 
   return (
     <section className="sticky top-0 z-100">
@@ -40,9 +44,10 @@ export default function NavbarDekstop() {
           </a>
         </div>
         <div className="navbar-end hidden lg:flex gap-3">
-          <button 
-          onClick={handleBeranda}
-          className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#6D123F] hover:rounded-md hover:border-[#6D123F] hover:text-white">
+          <button
+            onClick={handleBeranda}
+            className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#6D123F] hover:rounded-md hover:border-[#6D123F] hover:text-white"
+          >
             Beranda
           </button>
           <button
@@ -51,23 +56,29 @@ export default function NavbarDekstop() {
           >
             Bantuan
           </button>
-          <button 
-          onClick={handleCerita}
-          className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#6D123F] hover:rounded-md hover:border-[#6D123F] hover:text-white">
+          <button
+            onClick={handleCerita}
+            className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#6D123F] hover:rounded-md hover:border-[#6D123F] hover:text-white"
+          >
             Cerita
           </button>
-          <button 
-          onClick={handleAktivitas}
-          className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#6D123F] hover:rounded-md hover:border-[#6D123F] hover:text-white">
+          <button
+            onClick={handleAktivitas}
+            className="btn btn-ghost text-[16px] text-[#6D123F] hover:bg-[#6D123F] hover:rounded-md hover:border-[#6D123F] hover:text-white"
+          >
             Aktivitas
           </button>
-          <button className="btn border-none rounded-sm bg-pink-200 hover:bg-pink-500 hover:text-white">
+          <button
+            onClick={handleHerAi}
+            className="btn border-none rounded-sm bg-pink-200 hover:bg-pink-500 hover:text-white"
+          >
             <BotMessageSquare />
             Her Ai
           </button>
-          <button 
-          onClick={handleUserAkun}
-          className="btn btn-circle border-pink-200 bg-pink-200 hover:bg-pink-500">
+          <button
+            onClick={handleUserAkun}
+            className="btn btn-circle border-pink-200 bg-pink-200 hover:bg-pink-500"
+          >
             <User />
           </button>
         </div>
