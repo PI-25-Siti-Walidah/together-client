@@ -1,4 +1,4 @@
-import { ChartBarStacked, Gift, User, Handshake, Calendar, MapPin } from "lucide-react";
+import { ChartBarStacked, Gift, User, Handshake, Calendar, MapPin, Coins } from "lucide-react";
 export default function Bantuan (){
     const dataBantuan ={
         judul: "Program Sembako Sehat",
@@ -8,7 +8,9 @@ export default function Bantuan (){
         bentuk_bantuan: "Voucher Alfamart",
         mitra: "GreenLab Rumah",
         jangkauan: "Kota Bandung",
-        periode_selesai: "Desember 2025"
+        periode_selesai: "Desember 2025",
+        nominal: "1.000.000"
+
     }
     return(
         <section className="bg-white rounded-2xl shadow-md p-4 md:p-6">
@@ -38,6 +40,9 @@ export default function Bantuan (){
                     </div>
                     <div className="flex items-center gap-2">
                         <Calendar size={16} /> <strong>Berakhir pada:</strong> {dataBantuan.periode_selesai}
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <Coins size={16} /> <strong>Nominal Bantuan: Rp.</strong> {dataBantuan.nominal}
                     </div>
             </div>
         </section>
