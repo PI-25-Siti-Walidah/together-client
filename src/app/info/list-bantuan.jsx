@@ -2,7 +2,7 @@
 import { useBantuanStore } from "@/lib/store/bantuanStore";
 import { CalendarClock, UsersRoundIcon } from "lucide-react";
 
-export default function ListBantuan({ filterKategori, onDetail }) {
+export default function ListBantuan({ filterKategori, onDetail, selectedBantuan = {}}) {
   const { bantuan, loading, error } = useBantuanStore();
 
   if (loading)
