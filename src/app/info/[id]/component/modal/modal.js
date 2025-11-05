@@ -5,6 +5,7 @@ import Step2 from "./step2";
 import Step3 from "./step3";
 import Step4 from "./step4";
 import Steper from "./steper";
+import Swal from "sweetalert2";
 
 export default function Modal({
   onOpen,
@@ -89,7 +90,11 @@ export default function Modal({
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Data Pendaftaran Final:", formData);
-    alert("Pendaftaran berhasil dikirim!");
+    Swal.fire({
+        title: "Berhasil",
+        text: "Pendaftaran anda berhasil, data anda sedang diverifikasi. Status pengajuan anda bisa dilihat di aktivitas riwayat selengkapnya",
+        icon: "success",
+      });
     setFormData({});  
     setCurrentStep(1);
     onClose(); 
