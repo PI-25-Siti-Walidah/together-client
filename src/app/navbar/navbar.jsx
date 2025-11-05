@@ -10,7 +10,7 @@ export default function Navbar() {
       </div>
 
         {/* tampilkan hanya di mobile */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t shadow-lg">
+      <div className="md:hidden bg-white border-t shadow-lg">
         <Mobile />
       </div>
 

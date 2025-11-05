@@ -45,7 +45,7 @@ export default function Review (){
     testimoni:
       "Program edukasi lingkungan dari GreenLab Rumah membuka mata saya tentang pengelolaan limbah rumah tangga. Sekarang saya dan anak-anak membuat kompos dari sisa dapur, lingkungan jadi lebih bersih.",
     kategori: "Lingkungan",
-    bantuan: "Edukasi Pengelolaan Sampah Rumah Tangga",
+    bantuan: "Edukasi Pengelolaan Sampah",
   },
   {
     id: 5,
@@ -62,14 +62,14 @@ export default function Review (){
 
     return(
         <section>
-            <div className="max-w-6xl mx-auto py-10">
+            <div className="max-w-6xl mx-auto py-10 mb-14 lg:mb-2">
 
       {/* Review Cards */}
       <div className="flex flex-col gap-4">
         {reviews.map((item, i) => (
           <div
             key={i}
-            className="flex gap-4 items-start bg-white p-4 rounded-2xl transition"
+            className="flex gap-4 items-start bg-[#FFF9F7] p-4 rounded-2xl transition"
           >
             {/* Profil User */}
             <div className="flex-shrink-0 bg-[#F4F4FF] rounded-2xl flex flex-col items-center justify-center p-4 w-24 h-24">
