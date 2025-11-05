@@ -1,12 +1,31 @@
-"use client"
+"use client";
 import { useBantuanStore } from "@/lib/store/bantuanStore";
 import { CalendarClock, UsersRoundIcon } from "lucide-react";
 
 export default function ListBantuan({ filterKategori, onDetail }) {
   const { bantuan, loading, error } = useBantuanStore();
 
-  if (loading) return <p className="text-center text-gray-500">Memuat data...</p>;
-  if (error) return <p className="text-center text-red-500">Gagal memuat data: {error}</p>;
+  if (loading)
+    return <p className="text-center text-gray-500">Memuat data...</p>;
+  if (error)
+    return (
+      <p className="text-center text-red-500">Gagal memuat data: {error}</p>
+    );
+
+  const bantuanData = {
+    isActive: selectedBantuan.is_active ? "Berlangsung" : "Berakhir",
+    periodeMulai: selectedBantuan.periode_mulai
+      ? new Date(selectedBantuan.periode_mulai).toLocaleDateString("id-ID")
+      : "-",
+    periodeSelesai: selectedBantuan.periode_berakhir
+      ? new Date(selectedBantuan.periode_berakhir).toLocaleDateString("id-ID")
+      : "-",
+    mitra: selectedBantuan.mitra_id?.nama || "Tidak diketahui",
+    kategori: selectedBantuan.kategori_id?.nama_kategori || "Umum",
+    kuota: selectedBantuan.jumlah_penerima || "Tidak ditentukan",
+    benefit: selectedBantuan.bentuk_bantuan || "-",
+  };
+
   // const bantuanData = [
   //   {
   //     id: 1,
@@ -48,12 +67,13 @@ export default function ListBantuan({ filterKategori, onDetail }) {
 
   // ];
 
-
   const filteredData =
     filterKategori === "Semua"
       ? bantuan
       : bantuan.filter(
-          (item) => item.kategori_id?.nama_kategori?.toLowerCase() === filterKategori.toLowerCase()
+          (item) =>
+            item.kategori_id?.nama_kategori?.toLowerCase() ===
+            filterKategori.toLowerCase()
         );
 
   return (
@@ -64,24 +84,27 @@ export default function ListBantuan({ filterKategori, onDetail }) {
       )}
 
       {filteredData.map((item) => {
-        const tanggalSelesai = new Date(item.periode_berakhir).toLocaleDateString("id-ID", {
+        const tanggalSelesai = new Date(
+          item.periode_berakhir
+        ).toLocaleDateString("id-ID", {
           day: "numeric",
           month: "short",
           year: "numeric",
         });
         return (
-        <div
-          key={item._id}
-          className="bg-white rounded-2xl shadow p-4 flex flex-col gap-2"
-        >
-          <div className="bg-gray-200 rounded-lg h-32 flex items-center justify-center">
-            <img 
-              src={item.foto || "/beranda/bantuan.jpg"}
-              alt={item.judul}
-              className="object-cover w-full h-full" />
-          </div>
-          <h3 className="font-bold text-xl text-[#6D123F]">{item.judul}</h3>
-           <div className="flex items-center gap-2">
+          <div
+            key={item._id}
+            className="bg-white rounded-2xl shadow p-4 flex flex-col gap-2"
+          >
+            <div className="bg-gray-200 rounded-lg h-32 flex items-center justify-center">
+              <img
+                src={item.foto || "/beranda/bantuan.jpg"}
+                alt={item.judul}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <h3 className="font-bold text-xl text-[#6D123F]">{item.judul}</h3>
+            <div className="flex items-center gap-2">
               {item.mitra_id?.logo ? (
                 <img
                   src={item.mitra_id.logo}
@@ -94,43 +117,52 @@ export default function ListBantuan({ filterKategori, onDetail }) {
               <p className="text-sm text-gray-600">{item.mitra_id?.nama}</p>
             </div>
 
-          
             <div className="flex justify-between items-center text-xs text-[#6D123F]">
 
             {/* Kiri: ikon kalender + tanggal */}
             <div className="flex items-center pl-1.5 gap-4">
                 <CalendarClock className="w-4 h-4" />
-                <span className="text-[13px] font-medium">{tanggalSelesai}</span>
-            </div>
+                <span className="text-[13px] font-medium">
+                  {tanggalSelesai}
+                </span>
+              </div>
 
             {/* Kanan: ikon bintang + rating */}
             <div className="flex items-center gap-4">
                 <UsersRoundIcon className="w-4 h-4" />
-                <span className="text-[13px] font-medium">{item.jumlah_penerima} penerima</span>
-            </div>
+                <span className="text-[13px] font-medium">
+                  {item.jumlah_penerima} penerima
+                </span>
+              </div>
             </div>
 
             <div className="flex items-center mt-2 gap-2">
-              <div className={`text-md font-semibold px-3 py-1 rounded-full w-max
-              ${item.is_active ? "text-green-600 bg-green-200" : "text-red-600 bg-red-200"}`}>
+              <div
+                className={`text-md font-semibold px-3 py-1 rounded-full w-max
+              ${
+                item.is_active
+                  ? "text-green-600 bg-green-200"
+                  : "text-red-600 bg-red-200"
+              }`}
+              >
                 {item.is_active ? "Berlangsung" : "Berakhir"}
-                </div>
-                <span className="bg-pink-100 text-pink-600 font-semibold text-md px-3 py-1 rounded-full">
-              {item.kategori_id?.nama_kategori}
-            </span>
+              </div>
+              <span className="bg-pink-100 text-pink-600 font-semibold text-md px-3 py-1 rounded-full">
+                {item.kategori_id?.nama_kategori}
+              </span>
             </div>
 
-          <div className="flex justify-end mt-2 items-center">
-            <button
-              onClick={() => onDetail(item._id)}
-              className="bg-[#6D123F] text-white text-center text-lg px-4 py-2 rounded-full hover:bg-pink-500"
->
-              Baca Selengkapnya
-            </button>
+            <div className="flex justify-end mt-2 items-center">
+              <button
+                onClick={() => onDetail(item._id)}
+                className="bg-[#6D123F] text-white text-center text-lg px-4 py-2 rounded-full hover:bg-pink-500"
+              >
+                Baca Selengkapnya
+              </button>
+            </div>
           </div>
-        </div>
-        )}
-      )}
+        );
+      })}
     </div>
   );
 }
