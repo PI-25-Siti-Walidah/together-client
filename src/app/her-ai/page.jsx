@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Navbar from "../navbar/navbar";
 
 export default function TanyaAI() {
   const [question, setQuestion] = useState("");
@@ -25,7 +26,8 @@ export default function TanyaAI() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-5 border rounded-lg shadow">
+    <main className="lg:pt-30">
+    <div className="max-w-md bg-white mx-auto mt-10 p-5 border rounded-lg shadow">
       <h2 className="font-semibold text-lg mb-3">
         💬 Tanya AI tentang Bantuan
       </h2>
@@ -49,5 +51,7 @@ export default function TanyaAI() {
         </div>
       )}
     </div>
+    <Navbar />
+    </main>
   );
 }
