@@ -98,13 +98,13 @@ export default function ListBantuan({ filterKategori, onDetail }) {
             <div className="flex justify-between items-center text-xs text-[#6D123F]">
 
             {/* Kiri: ikon kalender + tanggal */}
-            <div className="flex items-center gap-1">
+            <div className="flex items-center pl-1.5 gap-4">
                 <CalendarClock className="w-4 h-4" />
                 <span className="text-[13px] font-medium">{tanggalSelesai}</span>
             </div>
 
             {/* Kanan: ikon bintang + rating */}
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-4">
                 <UsersRoundIcon className="w-4 h-4" />
                 <span className="text-[13px] font-medium">{item.jumlah_penerima} penerima</span>
             </div>

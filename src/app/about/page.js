@@ -48,7 +48,7 @@ const items = [
       <div className="my-4 mx-28 grid grid-cols-1 lg:grid-cols-2 gap items-center">
         <div >
           <img 
-          className="h-lg w-md rounded-md shadow-md" 
+          className="h-lg w-md" 
           src="/beranda/about.png" />
          </div> 
           <div className="py-12 my-6">
@@ -80,12 +80,13 @@ const items = [
           </div>
       </div>
       <div className="flex flex-col py-12 my-6 ">
-        <h2 className="text-center font-bold text-xl mb-3">Tim 
+        <div className="text-center font-bold text-xl mb-3"> 
               <span className="text-white">_</span>
               <span className="text-[#313131]">To</span>
               <span className="text-[#6D123F]">Get</span>
-              <span className="text-[#313131]">Her</span>
-        </h2>
+              <span className="text-[#313131]">Her </span>
+              <span>Team</span>
+        </div>
         <div>
           <ChromaGrid 
             items={items}
