@@ -1,4 +1,4 @@
-export default function Step2({pertanyaan, data, handleChange}){
+export default function Step2({pertanyaan, data, handleChange, errors}){
     return(
         <section>
             <div className="my-4 px-6">
@@ -69,6 +69,9 @@ export default function Step2({pertanyaan, data, handleChange}){
                     value={pertanyaan.type !== 'file' ? data[pertanyaan.id] || '' : undefined}
                     onChange={handleChange}
                     placeholder="Klik disini untuk mengisi formulir"/> 
+                )}
+                {errors[pertanyaan.id] && (
+                    <p className="text-red-500 text-xs mt-1">{errors [pertanyaan.id]}</p>
                 )}
                 </fieldset>
             ))}

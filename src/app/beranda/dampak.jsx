@@ -2,7 +2,7 @@ import { FolderOpen, HandCoins, Users, Laugh } from "lucide-react"
 
 export default function Dampak() {
     return (
-        <section className="py-12">
+        <section className="py-12 mt-11">
             {/* title Dampak */}
             <div className="max-w-3xl lg:max-w-5xl mx-auto text-center mb-8">
                 <div className="text-3xl font-bold lg:max-w-5xl text-[#6D123F] mb-4 text-balance">Dampak Nyata untuk Keluarga Perempuan Hebat</div>

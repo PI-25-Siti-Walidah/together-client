@@ -62,10 +62,10 @@ export default function Terkini() {
   }, [fetchBantuan]);
 
   return (
-    <section className="w-full h-fit bg-[#6D123F] py-12 px-4 md:px-9">
+    <section className="w-full h-fit bg-[#6D123F] py-12 px-4 my-11 md:px-9">
       <div className="mb-4 text-center">
-        <h1 className="font-bold text-2xl text-white">Bantuan Terkini</h1>
-        <p className="text-white text-lg opacity-80">
+        <h1 className="pb-4 font-bold text-3xl text-white">Bantuan Terkini</h1>
+        <p className="text-white text-balance opacity-80">
           Lihat bantuan yang sedang berjalan
         </p>
       </div>

@@ -2,10 +2,10 @@ export default function Cara(){
     return(
         <section className="py-12 bg-[#6D123F]">
             <div className="mb-10 text-center px-4">
-                <h2 className="font-bold text-2xl text-white">
+                <h2 className="font-bold text-3xl text-white">
                     Cara Menggunakan ToGetHer
                 </h2>
-                <p className="text-white text-lg opacity-80 text-center mt-1.5">
+                <p className="text-white text-balence opacity-80 text-center mt-1.5">
                     Langkah mudah untuk mulai mendapatkan bantuan melalui ToGetHer
                 </p>
             </div>

@@ -9,6 +9,7 @@ import Deskripsi from "./component/deskripsi";
 import Daftar from "./component/daftar";
 import Testi from "./component/testi";
 import Modal from "./component/modal/modal.js";
+import Back from "./component/back";
 
 export default function DetailBantuan() {
   const { id } = useParams();
@@ -213,7 +214,9 @@ export default function DetailBantuan() {
   ];
 
   return (
-    <section className=" flex flex-col items-center m-6 lg:my-12">
+    <section className="m-6 lg:my-12">
+      <Back/>
+      <div className=" flex flex-col items-center">
       <Header judul={selectedBantuan.judul} foto={selectedBantuan.foto} />
       <Spesifikasi bantuan={bantuanData} />
       <div className="lg:flex lg:gap-3">
@@ -234,6 +237,7 @@ export default function DetailBantuan() {
         formBantuan={formBantuan}
         bantuan={selectedBantuan}
       />
+      </div>
     </section>
   );
 }

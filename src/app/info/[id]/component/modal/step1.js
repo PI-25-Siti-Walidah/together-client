@@ -1,4 +1,4 @@
-export default function Step1({pertanyaan, data, handleChange}){
+export default function Step1({pertanyaan, data, handleChange, errors}){
     return(
         <section className="my-4 px-6">
             <h3 className="font-semibold text-center mb-1.5">Data Diri & Umum</h3>
@@ -68,6 +68,9 @@ export default function Step1({pertanyaan, data, handleChange}){
                     value={pertanyaan.type !== 'file' ? data[pertanyaan.id] || '' : undefined}
                     onChange={handleChange}
                     placeholder="Klik disini untuk mengisi formulir"/> 
+                )}
+                {errors[pertanyaan.id] && (
+                    <p className="text-red-500 text-xs mt-1">{errors [pertanyaan.id]}</p>
                 )}
                 </fieldset>
             ))}
