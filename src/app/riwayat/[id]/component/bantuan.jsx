@@ -4,6 +4,7 @@ export default function Bantuan (){
         judul: "Program Sembako Sehat",
         kategori: "Bantuan Ekonomi",
         jumlah_penerima: "100",
+        foto: "https://res.cloudinary.com/doigcqjgf/image/upload/v1762161986/bantuan/1762161741757-bantuan1.jpg",
         bentuk_bantuan: "Voucher Alfamart",
         mitra: "GreenLab Rumah",
         jangkauan: "Kota Bandung",
@@ -14,7 +15,10 @@ export default function Bantuan (){
             <div className="text-xl md:text-2xl text-center font-bold text-[#6D123F]">Detail Riwayat Pengajuan</div>
             <div className="text-lg md:text-xl gap-3 mb-3 text-center font-bold text-black">{dataBantuan.judul}</div>
             <div className="bg-gray-200 rounded-lg h-40 sm:h-80 mb-3 flex items-center justify-center">
-                <span className="text-gray-400">📷</span>
+                <img
+            src={dataBantuan.foto || "/beranda/bantuan.jpg"}
+            className="w-full h-45 object-cover"
+          />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 px-2 mb-2 gap-2 pt-4 text-sm md:text-base space-y-1 text-gray-700 items-center ">
                     <div className="flex items-center gap-2">

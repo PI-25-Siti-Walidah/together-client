@@ -8,7 +8,7 @@ export default function Jawaban (){
             kondisiTempatTinggal: "Kontrak",
             tanggungan: 2,
         },
-        kategori: "Bantuan Ekonomi",
+        kategori: "Ekonomi",
         kategoriSpesifik: {
             pengeluaranBulanan: "Rp 2.500.0000",
             alasanMendaftar: "Kesulitan memenuhi kebutuhan pokok harian",
