@@ -26,7 +26,7 @@ export default function TanyaAI() {
   };
 
   return (
-    <main className="lg:pt-30">
+    <main className="pt-30 lg:pt-30">
     <div className="max-w-md bg-white mx-auto mt-10 p-5 border rounded-lg shadow">
       <h2 className="font-semibold text-lg mb-3">
         💬 Tanya AI tentang Bantuan

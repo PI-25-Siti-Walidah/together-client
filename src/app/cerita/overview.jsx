@@ -9,7 +9,7 @@ export default function Overview (){
   ];
 
     return(
-        <section className='bg-[#FFF9F7] pt-5 lg:pt-30'>
+        <section className='bg-[#FFF9F7] pt-30 lg:pt-30'>
             {/* title Cerita */}
             <div className="max-w-4xl mx-auto text-center mb-6 px-4">
                 <div className="pt-6 text-3xl font-bold text-[#6D123F] mb-4">Cerita Perempuan Tangguh</div>

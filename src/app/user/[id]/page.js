@@ -11,7 +11,7 @@ import Footer from "@/app/footer/footer";
 export default function UserAkun(){
     return(
     <div>    
-        <div className="pt-0 lg:pt-16 mx-8 my-12 lg:mx-28">
+        <div className="pt-16 lg:pt-16 mx-8 my-12 lg:mx-28">
             <Avatar />
             <Akun />
             <Sandi />

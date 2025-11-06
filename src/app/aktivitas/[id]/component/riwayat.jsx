@@ -45,11 +45,11 @@ export default function Riyawat() {
 
   return (
     <section className="mt-8 p-10 card w-full bg-base-100 card-xs shadow-sm flex items-center">
-      <h1 className="mb-8 font-bold text-xl ">Riwayat Bantuan</h1>
+      <h1 className="mb-8 font-bold text-[#6D123F] text-xl ">Riwayat Bantuan</h1>
       {riwayat.map((r, i) => (
         <div key={i} className="w-full flex justify-between mb-3 pb-1.5 border-b border-gray-200 mx-4">
           <div>
-            <h2 className="font-semibold text-lg">{r.judul}</h2>
+            <h2 className="font-semibold text-[#6D123F] text-lg">{r.judul}</h2>
             <p>{r.donatur}</p>
           </div>
           <div
@@ -61,7 +61,7 @@ export default function Riyawat() {
           </div>
         </div>
       ))}
-      <button onClick={handleRiwayat} className="btn btn-ghost w-fit mt-4 text-[16px] font-medium bg-[#6D123F] text-white rounded-sm hover:bg-pink-600 hover:border-pink-600 hover:text-white">
+      <button onClick={handleRiwayat} className="btn btn-ghost w-fit my-8 text-[16px] font-medium bg-[#6D123F] text-white rounded-sm hover:bg-pink-600 hover:border-pink-600 hover:text-white">
               Lihat Selengkapnya
             </button>
     </section>

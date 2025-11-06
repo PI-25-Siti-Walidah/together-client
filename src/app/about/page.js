@@ -36,7 +36,7 @@ const items = [
 
 
   return (
-    <div className="h-full pt-4 lg:pt-32 bg-[#FFF9F7]">
+    <div className="h-full pt-32 lg:pt-32 bg-[#FFF9F7]">
       <div className="text-center">
         <h1 className="text-4xl lg:text-4xl font-extrabold text-[#6D123F]">
           Tentang Kami

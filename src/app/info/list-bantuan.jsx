@@ -100,7 +100,7 @@ export default function ListBantuan({ filterKategori, onDetail, selectedBantuan 
               <img
                 src={item.foto || "/beranda/bantuan.jpg"}
                 alt={item.judul}
-                className="object-cover w-full h-full"
+                className="object-cover rounded-lg w-full h-full"
               />
             </div>
             <h3 className="font-bold text-xl text-[#6D123F]">{item.judul}</h3>
@@ -120,7 +120,7 @@ export default function ListBantuan({ filterKategori, onDetail, selectedBantuan 
             <div className="flex justify-between items-center text-xs text-[#6D123F]">
 
             {/* Kiri: ikon kalender + tanggal */}
-            <div className="flex items-center pl-1.5 gap-4">
+            <div className="flex items-center pl-1 gap-3">
                 <CalendarClock className="w-4 h-4" />
                 <span className="text-[13px] font-medium">
                   {tanggalSelesai}
@@ -128,7 +128,7 @@ export default function ListBantuan({ filterKategori, onDetail, selectedBantuan 
               </div>
 
             {/* Kanan: ikon bintang + rating */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
                 <UsersRoundIcon className="w-4 h-4" />
                 <span className="text-[13px] font-medium">
                   {item.jumlah_penerima} penerima

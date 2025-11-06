@@ -2,7 +2,7 @@ import { UserLock, ClipboardList, View, Boxes } from "lucide-react"
 
 export default function Bagaimana() {
     return (
-    <section className="mt-11 py-12 bg-purple-50">
+    <section className="py-12 bg-purple-50">
         {/* title Bagaimana */}
         <div className="max-w-3xl lg:max-w-5xl mx-auto text-center mb-8">
             <div className="text-3xl font-bold lg:max-w-5xl text-[#6D123F] mb-4 text-balance">Bagaimana Cara Menerima Bantuan</div>
