@@ -49,7 +49,9 @@
 //     </section>
 //   );
 // }
+'use client'
 import { UsersRound, Building2, CalendarClock } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function Card({ item }) {
   if (!item) return null;
@@ -59,6 +61,13 @@ export default function Card({ item }) {
     month: "short",
     year: "numeric",
   });
+
+  const router = useRouter();
+
+  const handleDetail = () => {
+    router.push(`/info/${item._id}`);
+  };
+
 
   return (
     <section>
@@ -104,7 +113,9 @@ export default function Card({ item }) {
             <div className="badge bg-pink-200 text-pink-700 badge-secondary p-2 text-xs">
               {item.kategori_id?.nama_kategori || "Bantuan"}
             </div>
-            <button className="btn btn-sm rounded-sm bg-[#6D123F] text-white border-none">
+            <button 
+            onClick={handleDetail}
+            className="btn btn-sm rounded-sm bg-[#6D123F] text-white border-none">
               Detail Bantuan
             </button>
           </div>
