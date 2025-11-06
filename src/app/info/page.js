@@ -30,7 +30,7 @@ export default function Info() {
           <div className="text-3xl font-bold lg:max-w-5xl mb-4 text-balance text-[#6D123F] text-center">
             Informasi Bantuan
           </div>
-          <p className="text-center text-gray-500 mb-4">
+          <p className="text-center text-gray-500 mb-6">
             Temukan informasi bantuan yang sesuai dengan kebutuhan dan situasi
             Anda.
           </p>
