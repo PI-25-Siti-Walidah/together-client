@@ -1,11 +1,21 @@
-import { useEffect, useState } from "react";
+"use client";
 import { User } from "lucide-react";
+import { useAuthStore } from "@/lib/store/useAuthStore";
+import { useEffect, useState } from "react";
 
 export default function Avatar() {
-  const [nama, setNama] = useState("Siti");
+  const { user, checkAuth } = useAuthStore();
+  const [nama, setNama] = useState("");
+
   useEffect(() => {
-    setNama("Siti");
+    checkAuth();
   }, []);
+
+  useEffect(() => {
+    if (user) {
+      setNama(user.nama || user.username);
+    }
+  }, [user]);
 
   return (
     <section>
@@ -14,7 +24,7 @@ export default function Avatar() {
           <User className="w-10 h-10 text-[#6D123F]" />
         </div>
         <div className="text-md font-semibold text-[#6D123F] ">
-          Hai, {nama}!
+          Hai, {nama || "Pengguna"}!
         </div>
       </div>
     </section>
