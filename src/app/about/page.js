@@ -36,7 +36,8 @@ const items = [
 
 
   return (
-    <div className="h-full pt-32 lg:pt-32 bg-[#FFF9F7]">
+    <div className="h-full pt-32 lg:pt-32 px-4 bg-[#FFF9F7]">
+      <div>
       <div className="text-center">
         <h1 className="text-4xl lg:text-4xl font-extrabold text-[#6D123F]">
           Tentang Kami
@@ -45,13 +46,13 @@ const items = [
           Mengenal lebih dekat visi dan tim di balik ToGetHer.
         </p>
       </div>
-      <div className="my-4 mx-28 grid grid-cols-1 lg:grid-cols-2 gap items-center">
+      <div className="my-4 mx-5 lg:mx-28 grid grid-cols-1 lg:grid-cols-2 gap items-center">
         <div >
           <img 
           className="h-lg w-md" 
           src="/beranda/about.png" />
          </div> 
-          <div className="py-12 my-6">
+          <div className="py-2">
             <p className="text-4xl font-bold mb-2">
               <span className="text-[#313131]">To</span>
               <span className="text-[#6D123F]">Get</span>
@@ -96,6 +97,7 @@ const items = [
             ease="power3.out"
           />
         </div>
+      </div>
       </div>
       <Navbar />
       <Footer />
