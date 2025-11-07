@@ -14,7 +14,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div>
-      <main className='bg-[#FFF9F7]'>
+      <main className='overflow-x-hidden bg-[#FFF9F7]'>
         <Hero />
         <Media />
         <Terkini />
