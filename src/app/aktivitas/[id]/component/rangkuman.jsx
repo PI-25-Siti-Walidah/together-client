@@ -7,7 +7,7 @@ export default function Rangkuman() {
                 {/* Ringkasan Bantuan */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2 pt-4 items-stretch">
                     {/* Total Bantuan */}
-                    <div className="border lg:w-75 rounded-lg p-5 shadow-sm hover:shadow-md transition">
+                    <div className="border rounded-lg p-5 shadow-sm hover:shadow-md transition">
                     <h3 className="text-lg font-semibold text-[#6D123F] mb-3 flex items-center gap-2">
                         <HandCoins className="w-5 h-5 text-purple-600" /> Total Bantuan
                     </h3>

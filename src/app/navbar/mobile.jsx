@@ -36,7 +36,7 @@ export default function Mobile() {
   return (
     <section>
     <div className="navbar shadow-sm px-6 py-5 bg-[#FFF9F7] fixed top-0 left-0 right-0 z-50">
-      <div className="navbar-start gap-3">
+      <div className="navbar-start gap-3 mx-auto max-w-[420px]">
           <img
             src="/beranda/logo.png"
             alt="Logo-together"

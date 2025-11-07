@@ -2,7 +2,8 @@ import { UserLock, ClipboardList, View, Boxes } from "lucide-react"
 
 export default function Bagaimana() {
     return (
-    <section className="mt-11 py-12 bg-purple-50">
+    <section className="py-12 bg-purple-50">
+        <div className="w-full overflow-x-hidden px-4">
         {/* title Bagaimana */}
         <div className="max-w-3xl lg:max-w-5xl mx-auto text-center mb-8">
             <div className="text-3xl font-bold lg:max-w-5xl text-[#6D123F] mb-4 text-balance">Bagaimana Cara Menerima Bantuan</div>
@@ -10,6 +11,7 @@ export default function Bagaimana() {
         </div>
             
         {/* //stats component */}
+        
         <div className="stat shadow grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-8">
             {/* component 1 */}
             <div className="stat p-6 flex flex-col items-center text-center hover:shadow-xl transition">
@@ -43,6 +45,7 @@ export default function Bagaimana() {
                 <div className="stat-title text-lg font-bold">Terima Bantuanmu</div>
                 <div className="stat-desc text-xs mt-2 text-balance">Setelah disetujui, bantuan akan dikirim atau bisa diambil sesuai instruksi.</div>
             </div>
+        </div>
         </div>
     </section>
     );
