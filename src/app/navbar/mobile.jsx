@@ -7,9 +7,11 @@ import {
   Activity, User
 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export default function Mobile() {
   const router = useRouter();
+  const currentPath = usePathname();
 
   const handleBeranda = () => {
     router.push("/");
@@ -51,7 +53,14 @@ export default function Mobile() {
         <div className="navbar-end gap-3">
           <button
             onClick={handleUserAkun}
-            className="btn btn-circle border-pink-200 bg-pink-200 hover:bg-pink-500"
+            // className="btn btn-circle border-pink-200 bg-pink-200 hover:bg-pink-500"
+            className={`btn btn-circle border-pink-200 bg-pink-200 hover:bg-pink-500
+              ${
+                currentPath.startsWith("/user")
+                  ? "bg-pink-500"
+                  : "text-black" 
+              }
+            `}
           >
             <User className="w-5 h-5" />
           </button>
@@ -61,7 +70,14 @@ export default function Mobile() {
     <div className="dock flex justify-around bg-[#6D123F] items-center py-2">
       <button
         onClick={handleBeranda}
-        className="flex flex-col items-center text-white hover:bg-pink-500"
+        // className="flex flex-col items-center text-white hover:bg-pink-500"
+        className={`flex flex-col items-center text-white hover:bg-pink-500
+              ${
+                currentPath === "/"
+                  ? "bg-pink-500"
+                  : "text-white" 
+              }
+            `}
       >
         <House className="w-5 h-5" />
         <span className="dock-label text-xs mt-1">Beranda</span>
@@ -69,7 +85,14 @@ export default function Mobile() {
 
       <button
         onClick={handleInfo}
-        className="flex flex-col items-center text-white hover:bg-pink-500"
+        // className="flex flex-col items-center text-white hover:bg-pink-500"
+        className={`flex flex-col items-center text-white hover:bg-pink-500
+              ${
+                currentPath.startsWith("/info")
+                  ? "bg-pink-500"
+                  : "text-white" 
+              }
+            `}
       >
         <HandCoins className="w-5 h-5" />
         <span className="dock-label text-xs mt-1">Bantuan</span>
@@ -77,7 +100,14 @@ export default function Mobile() {
 
       <button
         onClick={handleHerAi}
-        className="flex flex-col items-center text-[#6D123F] bg-pink-50 hover:bg-pink-500 hover:text-white"
+        // className="flex flex-col items-center text-[#6D123F] bg-pink-50 hover:bg-pink-500 hover:text-white"
+        className={`flex flex-col items-center  hover:bg-pink-500
+              ${
+                currentPath.startsWith("/her-ai")
+                  ? "bg-pink-500 text-white"
+                  : "text-[#6D123F] bg-pink-50" 
+              }
+            `}
       >
         <BotMessageSquare className="w-5 h-5" />
         <span className="dock-label text-xs mt-1">Her AI</span>
@@ -85,7 +115,14 @@ export default function Mobile() {
 
       <button
         onClick={handleCerita}
-        className="flex flex-col items-center text-white hover:bg-pink-500"
+        // className="flex flex-col items-center text-white hover:bg-pink-500"
+        className={`flex flex-col items-center text-white hover:bg-pink-500
+              ${
+                currentPath.startsWith("/cerita")
+                  ? "bg-pink-500"
+                  : "text-white" 
+              }
+            `}
       >
         <Star className="w-5 h-5" />
         <span className="dock-label text-xs mt-1">Cerita</span>
@@ -93,7 +130,14 @@ export default function Mobile() {
 
       <button
         onClick={handleAktivitas}
-        className="flex flex-col items-center text-white hover:bg-pink-500"
+        // className="flex flex-col items-center text-white hover:bg-pink-500"
+        className={`flex flex-col items-center text-white hover:bg-pink-500
+              ${
+                currentPath.startsWith("/aktivitas")
+                  ? "bg-pink-500"
+                  : "text-white" 
+              }
+            `}
       >
         <Activity className="w-5 h-5" />
         <span className="dock-label text-xs mt-1">Aktivitas</span>
