@@ -28,7 +28,11 @@ export default function Terkini() {
       </div>
 
       {loading && <p className="text-center text-white">Memuat data...</p>}
-      {error && <p className="text-center text-red-300">{error}</p>}
+      {!loading && bantuan.length === 0 && (
+        <p className="text-center text-white/80">
+          Belum ada bantuan yang tersedia saat ini.
+        </p>
+      )}
 
       <Carousel
         opts={{ align: "start" }}
@@ -55,7 +59,7 @@ export default function Terkini() {
             shadow-sm hover:shadow-md
             transition-all duration-300 ease-in-out
             p-2 rounded-full backdrop-blur-sm
-            sm:left-4 md:left-[-2.5rem] lg:left-[-3rem]
+            sm:left-4 md:left-[-0.5rem] lg:left-[-1rem]
             cursor-pointer hover:scale-110 active:scale-95
           "
         />
@@ -67,7 +71,7 @@ export default function Terkini() {
             shadow-sm hover:shadow-md
             transition-all duration-300 ease-in-out
             p-2 rounded-full backdrop-blur-sm
-            sm:right-4 md:right-[-2.5rem] lg:right-[-3rem]
+            sm:right-4 md:right-[-0.5rem] lg:right-[-1rem]
             cursor-pointer hover:scale-110 active:scale-95
           "
         />

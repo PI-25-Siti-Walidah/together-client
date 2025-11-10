@@ -30,7 +30,7 @@ export default function Dampak() {
 
   return (
     <section className="py-16">
-      {/* Judul dan deskripsi */}
+      {/* Judul */}
       <div className="max-w-5xl mx-auto text-center mb-12 px-4">
         <h2 className="text-3xl font-bold text-[#6D123F] mb-4">
           Dampak Nyata untuk Keluarga Perempuan Hebat
@@ -43,24 +43,24 @@ export default function Dampak() {
       </div>
 
       {/* Grid Dampak */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto px-4 place-items-center">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto px-8 items-stretch">
         {stats.map((item, i) => (
           <div
             key={i}
-            className="bg-[#F4F4FF] rounded-2xl shadow-sm p-6 flex flex-col items-center text-center 
-                       transform transition-all duration-300 ease-in-out
+            className="bg-[#F4F4FF] rounded-2xl shadow-sm p-6 flex flex-col items-center justify-between text-center 
+                       transform transition-all duration-300 ease-in-out h-full
                        hover:scale-105 hover:shadow-md hover:bg-[#EFEAFF] hover:opacity-95"
           >
-            <div className="transition-opacity duration-300 group-hover:opacity-100">
-              {item.icon}
+            <div className="transition-opacity duration-300">{item.icon}</div>
+            <div>
+              <div className="text-2xl font-bold mt-4 text-[#2C2C2C]">
+                {item.value}
+              </div>
+              <div className="font-semibold text-[#313131]">{item.title}</div>
+              <p className="text-xs text-gray-600 mt-2 text-balance">
+                {item.desc}
+              </p>
             </div>
-            <div className="text-2xl font-bold mt-4 text-[#2C2C2C]">
-              {item.value}
-            </div>
-            <div className="font-semibold text-[#313131]">{item.title}</div>
-            <p className="text-xs text-gray-600 mt-2 text-balance">
-              {item.desc}
-            </p>
           </div>
         ))}
       </div>

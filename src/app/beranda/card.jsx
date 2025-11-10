@@ -63,7 +63,7 @@ export default function Card({ item }) {
           </span>
           <button
             onClick={handleDetail}
-            className="btn btn-sm bg-[#6D123F] text-white border-none hover:bg-pink-600 px-4 rounded-md"
+            className="btn btn-sm bg-[#6D123F] text-white border-none hover:bg-pink-600 px-4 rounded-md shadow transition-all duration-300 hover:scale-105"
           >
             Detail Bantuan
           </button>
