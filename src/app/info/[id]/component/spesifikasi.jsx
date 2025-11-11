@@ -1,50 +1,77 @@
-import { CalendarClock, CalendarDays, HandHeart, Folder, Users,Package2 } from "lucide-react";
+import {
+  CalendarClock,
+  CalendarDays,
+  HandHeart,
+  Folder,
+  Users,
+  Package2,
+} from "lucide-react";
 
-
-export default function Spesifikasi({bantuan}) {
+export default function Spesifikasi({ bantuan }) {
   return (
-    <section className="mt-3.5 ">
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 ">
-        <div className="w-40 h-20 p-2.5 bg-[#FCC0C5] text-[#6D123F] rounded-md flex items-center justify-start lg:w-44 gap-3 shadow-md">
-          <CalendarClock/>
+    <section className="mt-5">
+      <div
+        className="
+          grid
+          grid-cols-2      /* 2 kolom di mobile */
+          md:grid-cols-6   /* mulai dari tablet ke atas = 6 kolom */
+          gap-4
+          justify-items-center
+        "
+      >
+        {/* Status */}
+        <div className="flex w-full max-w-[180px] h-24 p-3 bg-[#FCC0C5] text-[#6D123F] rounded-xl shadow-md gap-3 items-center">
+          <CalendarClock className="flex-shrink-0" />
           <div>
-          <h6 className="font-bold">Status</h6>
-          <p className="text-sm">{bantuan.isActive}</p>
+            <h6 className="font-bold leading-tight">Status</h6>
+            <p className="text-sm">{bantuan.isActive}</p>
           </div>
         </div>
-        <div className="flex items-center justify-start gap-3 w-40 h-20 p-2.5 bg-[#FCC0C5] text-[#6D123F] rounded-md lg:w-44 shadow-md">
-          <CalendarDays className="font-bold" />
+
+        {/* Periode */}
+        <div className="flex w-full max-w-[180px] h-24 p-3 bg-[#FCC0C5] text-[#6D123F] rounded-xl shadow-md gap-3 items-center">
+          <CalendarDays className="flex-shrink-0" />
           <div>
-            <h6 className="font-bold">Periode</h6>
-            <p className="text-sm ">{bantuan.periodeMulai} sampai {bantuan.periodeSelesai}</p>
+            <h6 className="font-bold leading-tight">Periode</h6>
+            <p className="text-sm">
+              {bantuan.periodeMulai} - {bantuan.periodeSelesai}
+            </p>
           </div>
         </div>
-        <div className="flex items-center justify-start gap-3 40t h-20 p-2.5 bg-[#FCC0C5] text-[#6D123F] rounded-md sm:w-44 lg:w-44 shadow-md">
-          <HandHeart className="font-bold"/>
+
+        {/* Donatur */}
+        <div className="flex w-full max-w-[180px] h-24 p-3 bg-[#FCC0C5] text-[#6D123F] rounded-xl shadow-md gap-3 items-center">
+          <HandHeart className="flex-shrink-0" />
           <div>
-            <h6 className="font-bold">Donatur</h6>
+            <h6 className="font-bold leading-tight">Donatur</h6>
             <p className="text-sm">{bantuan.mitra}</p>
           </div>
         </div>
-        <div className="flex items-center justify-start gap-3 40 h-20 p-2.5 bg-[#FCC0C5] text-[#6D123F] rounded-md sm:w-44 lg:w-44 shadow-md">
-          <Folder className="font-bold"/>
+
+        {/* Kategori */}
+        <div className="flex w-full max-w-[180px] h-24 p-3 bg-[#FCC0C5] text-[#6D123F] rounded-xl shadow-md gap-3 items-center">
+          <Folder className="flex-shrink-0" />
           <div>
-          <h6 className="font-bold">Kategori</h6>
-          <p className="text-sm">{bantuan.kategori}</p>
+            <h6 className="font-bold leading-tight">Kategori</h6>
+            <p className="text-sm">{bantuan.kategori}</p>
           </div>
         </div>
-        <div className="flex items-center justify-start gap-3 40 h-20 p-2.5 bg-[#FCC0C5] text-[#6D123F] rounded-md sm:w-44 lg:w-44 shadow-md">
-          <Users className="font-bold"/>
+
+        {/* Kuota */}
+        <div className="flex w-full max-w-[180px] h-24 p-3 bg-[#FCC0C5] text-[#6D123F] rounded-xl shadow-md gap-3 items-center">
+          <Users className="flex-shrink-0" />
           <div>
-          <h6 className="font-bold">Kuota</h6>
-          <p className="text-sm">{bantuan.kuota} penerima</p>
+            <h6 className="font-bold leading-tight">Kuota</h6>
+            <p className="text-sm">{bantuan.kuota} penerima</p>
           </div>
         </div>
-        <div className="flex items-center justify-start gap-3 40 h-20 p-2.5 bg-[#FCC0C5] text-[#6D123F] rounded-md sm:w-44 lg:w-44 shadow-md">
-          <Package2 className="font-bold"/>
+
+        {/* Benefit */}
+        <div className="flex w-full max-w-[180px] h-24 p-3 bg-[#FCC0C5] text-[#6D123F] rounded-xl shadow-md gap-3 items-center">
+          <Package2 className="flex-shrink-0" />
           <div>
-          <h6 className="font-bold">Benefit</h6>
-          <p className="text-sm">{bantuan.benefit}</p>
+            <h6 className="font-bold leading-tight">Benefit</h6>
+            <p className="text-sm">{bantuan.benefit}</p>
           </div>
         </div>
       </div>
