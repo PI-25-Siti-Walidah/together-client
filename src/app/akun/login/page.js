@@ -115,7 +115,7 @@ export default function Login() {
               <button
                 type="submit"
                 disabled={loading}
-                className="btn btn-ghost w-full bg-pink-50 text-[#6D123F] font-bold py-2 rounded-md hover:bg-pink-600 hover:text-white transition"
+                className="btn btn-ghost w-full bg-pink-50 text-[#6D123F] font-bold py-2 rounded-md hover:bg-pink-600 border-none hover:text-white transition"
               >
                 {loading ? "Memproses..." : "Masuk"}
               </button>

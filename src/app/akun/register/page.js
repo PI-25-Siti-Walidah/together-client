@@ -140,7 +140,7 @@ export default function Register() {
             <button
               type="submit"
               disabled={loading}
-              className="btn btn-ghost w-fit mt-4 text-[16px] font-medium bg-[#6D123F] text-white rounded-sm hover:bg-pink-600"
+              className="btn btn-ghost w-fit mt-4 text-[16px] font-medium bg-[#6D123F] text-white rounded-sm border-none hover:bg-pink-600"
             >
               {loading ? "Memproses..." : "Buat Akun"}
             </button>
@@ -161,7 +161,7 @@ export default function Register() {
             </p>
             <button
               onClick={handleCloseModal}
-              className="mt-4 px-4 py-2 bg-[#6D123F] text-white rounded-md hover:bg-pink-700 transition"
+              className="mt-4 px-4 py-2 bg-[#6D123F] text-white rounded-md hover:bg-pink-700 border-none transition"
             >
               Lanjut ke Login
             </button>

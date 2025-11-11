@@ -20,10 +20,10 @@ export default function NavbarDekstop() {
   };
 
   const handleAktivitas = () => {
-    router.push("/aktivitas/[id]");
+    router.push("/aktivitas");
   };
   const handleUserAkun = () => {
-    router.push("/user/[id]");
+    router.push("/user");
   };
 
   const handleHerAi = () => {
@@ -52,8 +52,8 @@ export default function NavbarDekstop() {
             className={`btn btn-ghost text-[16px] hover:bg-[#6D123F] hover:rounded-md hover:border-[#6D123F] hover:text-white
               ${
                 currentPath === "/"
-                  ? "bg-[#6D123F] text-white border-none rounded-md" 
-                  : "text-[#6D123F]" 
+                  ? "bg-[#6D123F] text-white border-none rounded-md"
+                  : "text-[#6D123F]"
               }
             `}
           >
@@ -65,8 +65,8 @@ export default function NavbarDekstop() {
             className={`btn btn-ghost text-[16px] hover:bg-[#6D123F] hover:rounded-md hover:border-[#6D123F] hover:text-white
               ${
                 currentPath.startsWith("/info")
-                  ? "bg-[#6D123F] text-white border-none rounded-md" 
-                  : "text-[#6D123F]" 
+                  ? "bg-[#6D123F] text-white border-none rounded-md"
+                  : "text-[#6D123F]"
               }
             `}
           >
@@ -78,8 +78,8 @@ export default function NavbarDekstop() {
             className={`btn btn-ghost text-[16px] hover:bg-[#6D123F] hover:rounded-md hover:border-[#6D123F] hover:text-white
               ${
                 currentPath.startsWith("/cerita")
-                  ? "bg-[#6D123F] text-white border-none rounded-md" 
-                  : "text-[#6D123F]" 
+                  ? "bg-[#6D123F] text-white border-none rounded-md"
+                  : "text-[#6D123F]"
               }
             `}
           >
@@ -91,8 +91,8 @@ export default function NavbarDekstop() {
             className={`btn btn-ghost text-[16px] hover:bg-[#6D123F] hover:rounded-md hover:border-[#6D123F] hover:text-white
               ${
                 currentPath.startsWith("/aktivitas")
-                  ? "bg-[#6D123F] text-white border-none rounded-md" 
-                  : "text-[#6D123F]" 
+                  ? "bg-[#6D123F] text-white border-none rounded-md"
+                  : "text-[#6D123F]"
               }
             `}
           >
@@ -104,8 +104,8 @@ export default function NavbarDekstop() {
             className={`btn border-none rounded-sm hover:bg-pink-500 hover:text-white
               ${
                 currentPath.startsWith("/her-ai")
-                  ? "bg-[#6D123F] text-white border-none" 
-                  : "border-pink-200 bg-pink-200" 
+                  ? "bg-[#6D123F] text-white border-none"
+                  : "border-pink-200 bg-pink-200"
               }
             `}
           >
@@ -118,8 +118,8 @@ export default function NavbarDekstop() {
             className={`btn btn-circle hover:bg-pink-500
               ${
                 currentPath.startsWith("/user")
-                  ? "bg-[#6D123F] text-white border-none" 
-                  : "border-pink-200 bg-pink-200" 
+                  ? "bg-[#6D123F] text-white border-none"
+                  : "border-pink-200 bg-pink-200"
               }
             `}
           >
