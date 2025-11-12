@@ -1,11 +1,11 @@
 export default function TentangTogether() {
   return (
     <section>
-      <div className="card mt-4 bg-[#FFF9F7] card-md shadow-sm">
-        <div className="card-body">
+      <div className="card mt-6 bg-[#F4F4FF] rounded-2xl shadow-md">
+        <div className="card-body p-6 sm:p-8 text-gray-800 ">
           <h2 className="card-title pl-6">ToGetHer</h2>
-          <div className="px-6">
-            <div className="collapse bg-base-100 border border-base-300 mt-2">
+          <div className="px-2">
+            <div className="collapse bg-white border border-none mt-2">
               <input type="radio" name="my-accordion-1" defaultChecked />
               <div className="collapse-title font-semibold">
                 Tentang Aplikasi
@@ -20,7 +20,7 @@ export default function TentangTogether() {
                 kesalahan administrasi.
               </div>
             </div>
-            <div className="collapse bg-base-100 border border-base-300 mt-2">
+            <div className="collapse bg-white border border-none mt-2">
               <input type="radio" name="my-accordion-1" />
               <div className="collapse-title font-semibold">
                 Informasi Teknis
@@ -28,10 +28,10 @@ export default function TentangTogether() {
               <div className="collapse-content text-sm ">
                 Versi Aplikasi: 1.0.1 <br />
                 Tanggal Rilis Terbaru: 7 November 2025 <br />
-                Dikembangkan oleh: Tim ToGether 
+                Dikembangkan oleh: Tim ToGether
               </div>
             </div>
-            <div className="collapse bg-base-100 border border-base-300 mt-2">
+            <div className="collapse bg-white border border-none mt-2">
               <input type="radio" name="my-accordion-1" />
               <div className="collapse-title font-semibold">
                 Kontak & Dukungan

@@ -1,11 +1,11 @@
 export default function PusatBantuan() {
   return (
     <section>
-      <div className="card mt-4 bg-[#FFF9F7] card-md shadow-sm">
-        <div className="card-body">
+      <div className="card mt-6 bg-[#F4F4FF] rounded-2xl shadow-md">
+        <div className="card-body p-6 sm:p-8 text-gray-800">
           <h2 className="card-title pl-6">Pusat Bantuan</h2>
-          <div className="px-6">
-            <div className="collapse bg-base-100 border border-base-300 mt-2">
+          <div className="px-2">
+            <div className="collapse bg-white border border-none mt-2">
               <input type="radio" name="my-accordion-1" defaultChecked />
               <div className="collapse-title font-semibold">
                 1️⃣ Bagaimana cara mengajukan bantuan?
@@ -17,7 +17,7 @@ export default function PusatBantuan() {
                 kabar dari tim ToGetHer.
               </div>
             </div>
-            <div className="collapse bg-base-100 border border-base-300 mt-2">
+            <div className="collapse bg-white border border-none mt-2">
               <input type="radio" name="my-accordion-1" />
               <div className="collapse-title font-semibold">
                 2️⃣ Apa arti status pengajuan saya?
@@ -28,7 +28,7 @@ export default function PusatBantuan() {
                 Mohon maaf, ada data yang belum sesuai.
               </div>
             </div>
-            <div className="collapse bg-base-100 border border-base-300 mt-2">
+            <div className="collapse bg-white border border-none mt-2">
               <input type="radio" name="my-accordion-1" />
               <div className="collapse-title font-semibold">
                 3️⃣ Kenapa pengajuan saya ditolak?
@@ -41,7 +41,7 @@ export default function PusatBantuan() {
                 ini sudah penuh
               </div>
             </div>
-            <div className="collapse bg-base-100 border border-base-300 mt-2">
+            <div className="collapse bg-white border border-none mt-2">
               <input type="radio" name="my-accordion-1" />
               <div className="collapse-title font-semibold">
                 4️⃣ Berapa lama prosesnya?
@@ -52,7 +52,7 @@ export default function PusatBantuan() {
                 Bantuan ya
               </div>
             </div>
-            <div className="collapse bg-base-100 border border-base-300 mt-2">
+            <div className="collapse bg-white border border-none mt-2">
               <input type="radio" name="my-accordion-1" />
               <div className="collapse-title font-semibold">
                 5️⃣ Apakah pengajuan bantuan ini gratis?
@@ -62,14 +62,14 @@ export default function PusatBantuan() {
                 perlu bayar apa pun untuk mendaftar atau mengajukan bantuan.
               </div>
             </div>
-            <div className="collapse bg-base-100 border border-base-300 mt-2">
+            <div className="collapse bg-white border border-none mt-2">
               <input type="radio" name="my-accordion-1" />
               <div className="collapse-title font-semibold">
                 6️⃣ Saya lupa kata sandi, bagaimana cara masuk lagi?
               </div>
               <div className="collapse-content text-sm">
-                Tenang, Bu. Di halaman akun ini, tekan tombol “Lupa Kata
-                Sandi”, lalu ikuti langkah untuk mengganti sandi baru.
+                Tenang, Bu. Di halaman akun ini, tekan tombol “Lupa Kata Sandi”,
+                lalu ikuti langkah untuk mengganti sandi baru.
               </div>
             </div>
           </div>

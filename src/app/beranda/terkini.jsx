@@ -1,46 +1,3 @@
-// import Card from "./card";
-// import {
-//   Carousel,
-//   CarouselContent,
-//   CarouselItem,
-//   CarouselNext,
-//   CarouselPrevious,
-// } from "@/components/ui/carousel";
-
-// export default function Terkini() {
-//   return (
-//     <section className="w-full h-fit bg-[#6D123F] py-12 px-4 md:px-9">
-//       <div className="mb-4 text-center">
-//         <h1 className="font-bold text-2xl text-white">Bantuan Terkini</h1>
-//         <p className="text-white text-lg opacity-80">
-//           Lihat bantuan yang sedang berjalan
-//         </p>
-//       </div>
-//       <Carousel
-//         opts={{
-//           align: "start",
-//         }}
-//         className="p-5 w-full max-w-sm lg:max-w-5xl mx-auto"
-//       >
-//         <CarouselContent className="lg:-ml-4">
-//           {Array.from({ length: 5 }).map((_, index) => (
-//             <CarouselItem
-//               key={index}
-//               className="md:basis-1/2 lg:basis-1/3"
-//             >
-//               <div className="p-1">
-//                 <Card />
-//               </div>
-//             </CarouselItem>
-//           ))}
-//         </CarouselContent>
-//         <CarouselPrevious />
-//         <CarouselNext />
-//       </Carousel>
-//     </section>
-//   );
-// }
-
 "use client";
 
 import { useEffect } from "react";
@@ -71,20 +28,53 @@ export default function Terkini() {
       </div>
 
       {loading && <p className="text-center text-white">Memuat data...</p>}
-      {error && <p className="text-center text-red-300">{error}</p>}
+      {!loading && bantuan.length === 0 && (
+        <p className="text-center text-white/80">
+          Belum ada bantuan yang tersedia saat ini.
+        </p>
+      )}
 
-      <Carousel opts={{ align: "start" }} className="p-5 w-full max-w-sm lg:max-w-5xl mx-auto">
+      <Carousel
+        opts={{ align: "start" }}
+        className="relative p-4 sm:p-6 md:p-8 w-full max-w-[95%] md:max-w-6xl mx-auto overflow-visible"
+      >
         <CarouselContent className="lg:-ml-4">
           {bantuan.map((item) => (
-            <CarouselItem key={item._id} className="md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
+            <CarouselItem
+              key={item._id}
+              className="basis-full sm:basis-1/2 lg:basis-1/3"
+            >
+              <div className="p-3 sm:p-4">
                 <Card item={item} />
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+
+        <CarouselPrevious
+          className="
+            absolute left-2 top-1/2 -translate-y-1/2
+            bg-white/25 hover:bg-white/50
+            text-white hover:text-[#6D123F]
+            shadow-sm hover:shadow-md
+            transition-all duration-300 ease-in-out
+            p-2 rounded-full backdrop-blur-sm
+            sm:left-4 md:left-[-0.5rem] lg:left-[-1rem]
+            cursor-pointer hover:scale-110 active:scale-95
+          "
+        />
+        <CarouselNext
+          className="
+            absolute right-2 top-1/2 -translate-y-1/2
+            bg-white/25 hover:bg-white/50
+            text-white hover:text-[#6D123F]
+            shadow-sm hover:shadow-md
+            transition-all duration-300 ease-in-out
+            p-2 rounded-full backdrop-blur-sm
+            sm:right-4 md:right-[-0.5rem] lg:right-[-1rem]
+            cursor-pointer hover:scale-110 active:scale-95
+          "
+        />
       </Carousel>
     </section>
   );

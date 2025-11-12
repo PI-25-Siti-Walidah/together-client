@@ -16,14 +16,12 @@ export default function DetailBantuan() {
   const { bantuan, fetchBantuan, loading } = useBantuanStore();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Ambil data bantuan dari store
   useEffect(() => {
     if (bantuan.length === 0) {
       fetchBantuan();
     }
   }, [bantuan.length, fetchBantuan]);
 
-  // Cari bantuan berdasarkan id dari URL
   const selectedBantuan = bantuan.find((b) => b._id === id);
 
   if (loading)
@@ -214,29 +212,31 @@ export default function DetailBantuan() {
   ];
 
   return (
-    <section className="m-6 lg:my-12">
-      <Back/>
-      <div className=" flex flex-col items-center">
-      <Header judul={selectedBantuan.judul} foto={selectedBantuan.foto} />
-      <Spesifikasi bantuan={bantuanData} />
-      <div className="lg:flex lg:gap-3">
-        <Deskripsi
-          deskripsi={selectedBantuan.deskripsi}
-          syarat={selectedBantuan.syarat}
-        />
-        <div>
-          <Daftar onOpen={() => setIsModalOpen(true)} />
-          <Testi testimoni={testimoni} />
+    <section className="bg-[#FFF9F7] px-6 py-8 lg:py-12">
+      <Back />
+      <div className="flex flex-col items-center max-w-6xl mx-auto">
+        <Header judul={selectedBantuan.judul} foto={selectedBantuan.foto} />
+        <Spesifikasi bantuan={bantuanData} />
+        <div className="flex flex-col lg:flex-row lg:gap-6 w-full mt-6">
+          <div className="flex-1">
+            <Deskripsi
+              deskripsi={selectedBantuan.deskripsi}
+              syarat={selectedBantuan.syarat}
+            />
+          </div>
+          <div className="flex flex-col flex-1 gap-4 mt-6 lg:mt-0">
+            <Daftar onOpen={() => setIsModalOpen(true)} />
+            <Testi testimoni={testimoni} />
+          </div>
         </div>
-      </div>
-      <Modal
-        onOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        formUmum={formUmum}
-        formKategori={formKategori}
-        formBantuan={formBantuan}
-        bantuan={selectedBantuan}
-      />
+        <Modal
+          onOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          formUmum={formUmum}
+          formKategori={formKategori}
+          formBantuan={formBantuan}
+          bantuan={selectedBantuan}
+        />
       </div>
     </section>
   );
