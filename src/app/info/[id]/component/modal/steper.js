@@ -1,14 +1,17 @@
-export default function Steper({currentStep}) {
-const langkah = ['Umum', 'Kategori', 'Bantuan', 'Konfirmasi Data'];
+export default function Steper({ currentStep }) {
+  const langkah = ["Umum", "Kategori", "Bantuan", "Konfirmasi Data"];
   return (
-    <section className="p-8">
+    <section className="py-4 flex justify-center ">
       <ul className="steps">
-        {langkah.map((langkah, index)=>(
-            <li
+        {langkah.map((langkah, index) => (
+          <li
             key={index}
-            className={`step ${index + 1 <= currentStep ? 'step-primary' : ''}`}>
-                {langkah}
-            </li>
+            className={`step text-sm text-gray-600 ${
+              index + 1 <= currentStep ? "step-primary" : ""
+            }`}
+          >
+            {langkah}
+          </li>
         ))}
       </ul>
     </section>

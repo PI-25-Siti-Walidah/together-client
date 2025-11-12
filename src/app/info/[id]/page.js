@@ -212,7 +212,7 @@ export default function DetailBantuan() {
   ];
 
   return (
-    <section className="px-6 py-8 lg:py-12">
+    <section className="bg-[#FFF9F7] px-6 py-8 lg:py-12">
       <Back />
       <div className="flex flex-col items-center max-w-6xl mx-auto">
         <Header judul={selectedBantuan.judul} foto={selectedBantuan.foto} />

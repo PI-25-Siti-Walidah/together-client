@@ -1,7 +1,7 @@
 export default function Daftar({ onOpen }) {
   return (
     <section className="mt-3">
-      <div className="card w-full bg-base-100 lg:w-md card-md shadow-sm">
+      <div className="card w-full bg-white lg:w-md card-md shadow-sm">
         <div className="card-body">
           <h2 className="card-title text-[#6D123F] font-bold">
             Dukungan Ini Hadir Untukmu
