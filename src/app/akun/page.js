@@ -1,11 +1,10 @@
-"use client"
-import Login from "./login/page"
+"use client";
+import Login from "./login/page";
 
 export default function Akun() {
   return (
     <main>
-        <Login />
-    
+      <Login />
     </main>
-  )
+  );
 }

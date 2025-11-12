@@ -5,13 +5,13 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import Navbar from "../navbar/navbar";
 import { useBantuanStore } from "@/lib/store/bantuanStore";
+import Footer from "../footer/footer";
 
 export default function Info() {
   const router = useRouter();
 
   const [filterKategori, setFilterKategori] = useState("Semua");
 
-  // ambil data dari store
   const { fetchBantuan } = useBantuanStore();
 
   useEffect(() => {
@@ -45,6 +45,7 @@ export default function Info() {
         {/* List Bantuan */}
         <ListBantuan filterKategori={filterKategori} onDetail={handleDetail} />
       </main>
+      <Footer />
     </div>
   );
 }

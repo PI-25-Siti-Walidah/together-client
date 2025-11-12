@@ -2,7 +2,11 @@
 import { useBantuanStore } from "@/lib/store/bantuanStore";
 import { CalendarClock, UsersRoundIcon } from "lucide-react";
 
-export default function ListBantuan({ filterKategori, onDetail, selectedBantuan = {}}) {
+export default function ListBantuan({
+  filterKategori,
+  onDetail,
+  selectedBantuan = {},
+}) {
   const { bantuan, loading, error } = useBantuanStore();
 
   if (loading)
@@ -78,7 +82,6 @@ export default function ListBantuan({ filterKategori, onDetail, selectedBantuan 
 
   return (
     <div className="flex flex-col gap-4">
-      {/* {filteredData.map((item) => ( */}
       {filteredData.length === 0 && (
         <p className="text-center text-gray-400">Tidak ada data bantuan.</p>
       )}
@@ -94,68 +97,66 @@ export default function ListBantuan({ filterKategori, onDetail, selectedBantuan 
         return (
           <div
             key={item._id}
-            className="bg-white rounded-2xl shadow p-4 flex flex-col gap-2"
+            className="w-full bg-white rounded-2xl shadow-md overflow-hidden mb-4 flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-[1.02]"
           >
-            <div className="bg-gray-200 rounded-lg h-32 flex items-center justify-center">
+            <div className="w-full h-50 bg-gray-100">
               <img
                 src={item.foto || "/beranda/bantuan.jpg"}
                 alt={item.judul}
-                className="object-cover rounded-lg w-full h-full"
+                className="object-cover w-full h-full"
               />
             </div>
-            <h3 className="font-bold text-xl text-[#6D123F]">{item.judul}</h3>
-            <div className="flex items-center gap-2">
-              {item.mitra_id?.logo ? (
-                <img
-                  src={item.mitra_id.logo}
-                  alt={item.mitra_id?.nama}
-                  className="w-6 h-6 rounded-full border object-contain"
-                />
-              ) : (
-                <div className="w-6 h-6 bg-gray-200 rounded-full" />
-              )}
-              <p className="text-sm text-gray-600">{item.mitra_id?.nama}</p>
-            </div>
 
-            <div className="flex justify-between items-center text-xs text-[#6D123F]">
+            <div className="p-5 flex flex-col gap-3">
+              <h3 className="font-bold text-lg text-[#6D123F] leading-snug line-clamp-2">
+                {item.judul}
+              </h3>
 
-            {/* Kiri: ikon kalender + tanggal */}
-            <div className="flex items-center pl-1 gap-3">
-                <CalendarClock className="w-4 h-4" />
-                <span className="text-[13px] font-medium">
-                  {tanggalSelesai}
+              <div className="flex items-center gap-2">
+                {item.mitra_id?.logo ? (
+                  <img
+                    src={item.mitra_id.logo}
+                    alt={item.mitra_id?.nama}
+                    className="w-6 h-6 rounded-full border object-contain"
+                  />
+                ) : (
+                  <div className="w-6 h-6 bg-gray-200 rounded-full" />
+                )}
+                <p className="text-sm text-gray-600">{item.mitra_id?.nama}</p>
+              </div>
+
+              <div className="flex justify-between items-center text-xs text-[#6D123F]">
+                <div className="flex items-center gap-2">
+                  <CalendarClock className="w-4 h-4" />
+                  <span className="font-medium">{tanggalSelesai}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <UsersRoundIcon className="w-4 h-4" />
+                  <span className="font-medium">
+                    {item.jumlah_penerima} penerima
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2 mt-2">
+                <span
+                  className={`text-xs font-semibold px-3 py-1 rounded-full
+                    ${
+                      item.is_active
+                        ? "text-green-700 bg-green-100"
+                        : "text-red-700 bg-red-100"
+                    }`}
+                >
+                  {item.is_active ? "Berlangsung" : "Berakhir"}
+                </span>
+                <span className="text-xs font-semibold bg-pink-100 text-pink-700 px-3 py-1 rounded-full">
+                  {item.kategori_id?.nama_kategori}
                 </span>
               </div>
 
-            {/* Kanan: ikon bintang + rating */}
-            <div className="flex items-center gap-2">
-                <UsersRoundIcon className="w-4 h-4" />
-                <span className="text-[13px] font-medium">
-                  {item.jumlah_penerima} penerima
-                </span>
-              </div>
-            </div>
-
-            <div className="flex items-center mt-2 gap-2">
-              <div
-                className={`text-md font-semibold px-3 py-1 rounded-full w-max
-              ${
-                item.is_active
-                  ? "text-green-600 bg-green-200"
-                  : "text-red-600 bg-red-200"
-              }`}
-              >
-                {item.is_active ? "Berlangsung" : "Berakhir"}
-              </div>
-              <span className="bg-pink-100 text-pink-600 font-semibold text-md px-3 py-1 rounded-full">
-                {item.kategori_id?.nama_kategori}
-              </span>
-            </div>
-
-            <div className="flex justify-end mt-2 items-center">
               <button
                 onClick={() => onDetail(item._id)}
-                className="bg-[#6D123F] text-white text-center text-lg px-4 py-2 rounded-full hover:bg-pink-500"
+                className="mt-4 bg-[#6D123F] hover:bg-pink-600 text-white text-sm font-semibold px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 cursor-pointer"
               >
                 Baca Selengkapnya
               </button>

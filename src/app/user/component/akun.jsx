@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useAuthStore } from "../../../../lib/store/useAuthStore";
+import { useAuthStore } from "../../../lib/store/useAuthStore";
 
 const API_URL = "https://together-server-production.up.railway.app/user";
 
@@ -52,14 +52,11 @@ export default function Akun() {
         setLoading(false);
       }
     };
-
     fetchUserData();
   }, [user?._id, token]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setAkunSaya((prev) => ({ ...prev, [name]: value }));
-  };
+  const handleChange = (e) =>
+    setAkunSaya((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
   const handleSave = async () => {
     if (!user?._id) return;
@@ -73,67 +70,45 @@ export default function Akun() {
         body: JSON.stringify(akunSaya),
       });
       const result = await res.json();
-      if (res.ok) {
-        alert("Profil berhasil diperbarui");
-      } else {
-        alert(result.message || "Gagal memperbarui profil");
-      }
-    } catch (err) {
+      alert(res.ok ? "Profil berhasil diperbarui" : result.message);
+    } catch {
       alert("Terjadi kesalahan saat menyimpan data");
-      console.error(err);
     }
   };
 
   return (
-    <section>
-      <div className="card bg-[#FFF9F7] card-md shadow-sm">
-        <div className="card-body">
-          <h2 className="card-title pl-5">Akun Saya</h2>
+    <section className="w-full">
+      <div className="card bg-[#F4F4FF] rounded-2xl shadow-md">
+        <div className="card-body p-8 sm:p-10">
+          <h2 className="card-title item-center text-xl sm:text-2xl font-bold text-[#6D123F] mb-6">
+            Akun Saya
+          </h2>
+
           {loading ? (
-            <p className="text-center py-4">Memuat data...</p>
+            <p className="text-center py-6 text-gray-500">Memuat data...</p>
           ) : (
-            <fieldset className="fieldset w-full p-6">
-              <label className="label">Username</label>
-              <input
-                type="text"
-                name="username"
-                className="input w-full"
-                value={akunSaya.username}
-                onChange={handleChange}
-              />
-
-              <label className="label">Nama Lengkap</label>
-              <input
-                type="text"
-                name="nama"
-                className="input w-full"
-                value={akunSaya.nama}
-                onChange={handleChange}
-              />
-
-              <label className="label">Nomor WhatsApp</label>
-              <input
-                type="text"
-                name="no_telp"
-                className="input w-full"
-                value={akunSaya.no_telp}
-                onChange={handleChange}
-              />
-
-              <label className="label">Alamat</label>
-              <input
-                type="text"
-                name="alamat"
-                className="input w-full"
-                value={akunSaya.alamat}
-                onChange={handleChange}
-              />
-            </fieldset>
+            <div className="flex flex-col gap-5">
+              {["username", "nama", "no_telp", "alamat"].map((field, i) => (
+                <div key={i} className="flex flex-col gap-2">
+                  <label className="font-medium capitalize text-sm text-gray-700">
+                    {field.replace("_", " ")}
+                  </label>
+                  <input
+                    type="text"
+                    name={field}
+                    value={akunSaya[field]}
+                    onChange={handleChange}
+                    className="input input-bordered w-full bg-white text-gray-800 rounded-lg focus:ring-2 focus:ring-[#6D123F] focus:outline-none transition-all"
+                  />
+                </div>
+              ))}
+            </div>
           )}
-          <div className="justify-end card-actions">
+
+          <div className="flex justify-end mt-8">
             <button
               onClick={handleSave}
-              className="btn w-fit mr-5 text-[16px] font-medium bg-[#6D123F] text-white rounded-sm border-none hover:bg-pink-600"
+              className="btn bg-[#6D123F] text-white font-semibold px-8 py-3 rounded-lg border-none hover:bg-pink-600 transition-all duration-300 hover:scale-105"
             >
               Simpan Akun
             </button>

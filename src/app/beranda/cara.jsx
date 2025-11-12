@@ -1,48 +1,46 @@
-export default function Cara(){
-    return(
-        <section className="py-12 bg-[#6D123F]">
-            <div className="mb-10 text-center px-4">
-                <h2 className="font-bold text-3xl text-white">
-                    Cara Menggunakan ToGetHer
-                </h2>
-                <p className="text-white text-balence opacity-80 text-center mt-1.5">
-                    Langkah mudah untuk mulai mendapatkan bantuan melalui ToGetHer
-                </p>
+export default function Cara() {
+  const steps = [
+    { img: "/beranda/tutorial/1.png", text: "Masuk ke bantuan" },
+    { img: "/beranda/tutorial/2.png", text: "Filter & pilih bantuan" },
+    { img: "/beranda/tutorial/3.png", text: "Baca deskripsi bantuan" },
+    { img: "/beranda/tutorial/4.png", text: "Daftar dan isi form bantuan" },
+    { img: "/beranda/tutorial/5.png", text: "Tunggu bantuan disetujui" },
+    { img: "/beranda/tutorial/6.png", text: "Upload bukti terima & testimoni" },
+  ];
+
+  return (
+    <section className="py-16 bg-[#6D123F]">
+      <div className="text-center mb-12 px-6">
+        <h2 className="font-bold text-3xl text-white mb-2">
+          Cara Menggunakan ToGetHer
+        </h2>
+        <p className="text-white opacity-80 text-sm">
+          Langkah mudah untuk mulai mendapatkan bantuan melalui ToGetHer
+        </p>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 ">
+          {steps.map((step, i) => (
+            <div
+              key={i}
+              className="relative bg-[#FFF9F7] rounded-xl shadow-sm hover:shadow-md transition transform hover:scale-105 hover:bg-[#EFEAFF] duration-300 flex flex-col items-center justify-center p-4"
+            >
+              <div className="relative">
+                <img
+                  src={step.img}
+                  alt={step.text}
+                  className="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 transition-transform duration-300 hover:scale-105"
+                />
+                <span className="absolute -top-2 -left-2 bg-[#6D123F] text-white text-xs font-bold px-2 py-1 rounded-full shadow-md">
+                  {i + 1}
+                </span>
+              </div>
+              <p className="text-xs text-center opacity-80">{step.text}</p>
             </div>
-            <div className="max-w-7xl mx-auto px-4">
-            <div className="stat m-2 shadow rounded-xl bg-[#FFF9F7] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 ">
-                <div className="stat m-2 flex flex-col items-center">
-                    <img src="/beranda/tutorial/1.png" alt="" 
-                    className="stat-figure w-[103px] h-[103px]"/>
-                    <p className="text-sm opacity-80 text-center mt-1.5">Masuk ke bantuan</p>
-                </div>
-                <div className="stat flex flex-col items-center">
-                    <img src="/beranda/tutorial/2.png" alt="" 
-                    className="stat-figure w-28 h-28"/>
-                    <p className="text-sm opacity-80 text-center mt-1.5">Filter & pilih bantuan</p>
-                </div>
-                <div className="stat flex flex-col items-center">
-                    <img src="/beranda/tutorial/3.png" alt="" 
-                    className="stat-figure w-28 h-28"/>
-                    <p className="text-sm opacity-80 text-center mt-1.5">Baca deskripsi bantuan</p>
-                </div>
-                <div className="stat flex flex-col items-center">
-                    <img src="/beranda/tutorial/4.png" alt="" 
-                    className="stat-figure w-28 h-28"/>
-                    <p className="text-sm opacity-80 text-center mt-1.5">Daftar dan isi form bantuan</p>
-                </div>
-                <div className="stat flex flex-col items-center">
-                    <img src="/beranda/tutorial/5.png" alt="" 
-                    className="stat-figure w-28 h-28"/>
-                    <p className="text-sm opacity-80 text-center mt-1.5">Tunggu bantuan disetujui</p>
-                </div>
-                <div className="stat flex flex-col items-center">
-                    <img src="/beranda/tutorial/6.png" alt="" 
-                    className="stat-figure w-28 h-28"/>
-                    <p className="text-sm opacity-80 text-center mt-1.5">Upload bukti terima & testimoni</p>
-                </div>
-            </div>
-            </div>
-        </section>
-    )
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

@@ -1,45 +1,69 @@
-import { FolderOpen, HandCoins, Users, Laugh } from "lucide-react"
+import { FolderOpen, HandCoins, Users, Laugh } from "lucide-react";
 
 export default function Dampak() {
-    return (
-        <section className="py-12 mt-11">
-            {/* title Dampak */}
-            <div className="max-w-3xl lg:max-w-5xl mx-auto text-center mb-8">
-                <div className="text-3xl font-bold lg:max-w-5xl text-[#6D123F] mb-4 text-balance">Dampak Nyata untuk Keluarga Perempuan Hebat</div>
-                <p className="text-gray-600 min-w-lg lg:max-w-5xl mb-8 text-balance">Bersama, kami membantu perempuan kepala keluarga untuk kembali berdaya, menghidupi keluarga, dan menciptakan perubahan di lingkungannya.</p>
+  const stats = [
+    {
+      icon: <FolderOpen className="w-10 h-10 text-[#6D123F]" />,
+      value: "4",
+      title: "Kategori Bantuan",
+      desc: "Pendidikan, modal usaha, pelatihan, dan kebutuhan dasar",
+    },
+    {
+      icon: <Users className="w-10 h-10 text-[#6D123F]" />,
+      value: "15.250+",
+      title: "Keluarga Terbantu",
+      desc: "Perempuan kepala keluarga yang telah menerima dukungan",
+    },
+    {
+      icon: <HandCoins className="w-10 h-10 text-[#6D123F]" />,
+      value: "Rp 1,2 M",
+      title: "Nilai Bantuan",
+      desc: "Total bantuan yang telah tersalurkan di berbagai wilayah",
+    },
+    {
+      icon: <Laugh className="w-10 h-10 text-[#6D123F]" />,
+      value: "96%",
+      title: "Kepuasan Penerima",
+      desc: "Penerima merasa proses bantuan mudah dan bermanfaat langsung",
+    },
+  ];
+
+  return (
+    <section className="py-16">
+      {/* Judul */}
+      <div className="max-w-5xl mx-auto text-center mb-12 px-4">
+        <h2 className="text-3xl font-bold text-[#6D123F] mb-4">
+          Dampak Nyata untuk Keluarga Perempuan Hebat
+        </h2>
+        <p className="text-gray-600 text-balance">
+          Bersama, kami membantu perempuan kepala keluarga untuk kembali
+          berdaya, menghidupi keluarga, dan menciptakan perubahan di
+          lingkungannya.
+        </p>
+      </div>
+
+      {/* Grid Dampak */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto px-8 items-stretch">
+        {stats.map((item, i) => (
+          <div
+            key={i}
+            className="bg-[#F4F4FF] rounded-2xl shadow-sm p-6 flex flex-col items-center justify-between text-center 
+                       transform transition-all duration-300 ease-in-out h-full
+                       hover:scale-105 hover:shadow-md hover:bg-[#EFEAFF] hover:opacity-95"
+          >
+            <div className="transition-opacity duration-300">{item.icon}</div>
+            <div>
+              <div className="text-2xl font-bold mt-4 text-[#2C2C2C]">
+                {item.value}
+              </div>
+              <div className="font-semibold text-[#313131]">{item.title}</div>
+              <p className="text-xs text-gray-600 mt-2 text-balance">
+                {item.desc}
+              </p>
             </div>
-            
-            {/* //stats component */}
-            <div className="stat shadow grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                {/* component 1 */}
-                <div className="stat bg-[#F4F4FF] rounded-2xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-xl transition">
-                    <FolderOpen className="stat-figure w-10 h-10 mb-4 text-[#6D123F]" />
-                    <div className="stat-value text-2xl font-bold mb-2">4</div>
-                    <div className="stat-title text-lg font-bold text-balance">Kategori Bantuan</div>
-                    <div className="stat-desc text-xs mt-2 text-balance">Pendidikan, modal usaha, pelatihan, dan kebutuhan dasar</div>
-                </div>
-                {/* component 2 */}
-                <div className="stat bg-[#F4F4FF] rounded-2xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-xl transition">
-                    <Users className="stat-figure w-10 h-10 mb-4 text-[#6D123F]" />
-                    <div className="stat-value text-2xl font-bold mb-2">15.250+</div>
-                    <div className="stat-title text-lg font-bold text-balance">Keluarga Terbantu</div>
-                    <div className="stat-desc text-xs mt-2 text-balance">Perempuan kepala keluarga yang telah menerima dukungan</div>
-                </div>
-                {/* component 3 */}
-                <div className="stat bg-[#F4F4FF] rounded-2xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-xl transition">
-                    <HandCoins className="stat-figure w-10 h-10 mb-4 text-[#6D123F]" />
-                    <div className="stat-value text-2xl font-bold mb-2">Rp 1,2 M</div>
-                    <div className="stat-title text-lg font-bold text-balance">Nilai Bantuan</div>
-                    <div className="stat-desc text-xs mt-2 text-balance">Total bantuan yang telah tersalurkan kepada penerima di berbagai wilayah</div>
-                </div>
-                {/* component 4 */}
-                <div className="stat bg-[#F4F4FF] rounded-2xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-xl transition">
-                    <Laugh className="stat-figure w-10 h-10 mb-4 text-[#6D123F]" />
-                    <div className="stat-value text-2xl font-bold mb-2">96%</div>
-                    <div className="stat-title text-lg font-bold text-balance">Kepuasan Penerima</div>
-                    <div className="stat-desc text-xs mt-2 text-balance">Penerima merasa proses bantuan mudah dan bermanfaat langsung</div>
-                </div>
-            </div>
-        </section>
-    );
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
