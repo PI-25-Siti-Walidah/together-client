@@ -1,20 +1,47 @@
 "use client";
 
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useAuthStore } from "@/lib/store/useAuthStore";
 import Greeting from "./component/greeting";
 import Benefit from "./component/benefit";
 import Rangkuman from "./component/rangkuman";
 import Riwayat from "./component/riwayat";
 import Testimoni from "./component/testimoni";
-import { useRouter } from "next/navigation";
 import Navbar from "@/app/navbar/navbar";
 import Footer from "@/app/footer/footer";
 
 export default function Aktivitas() {
   const router = useRouter();
+  const { user, checkAuth } = useAuthStore();
+
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
+
+  useEffect(() => {
+    if (user === null) {
+      router.push("/akun/login");
+    }
+  }, [user, router]);
 
   const handleAkun = () => {
-    router.push("/akun");
+    if (user) {
+      router.push("/user");
+    } else {
+      router.push("/akun/login");
+    }
   };
+
+  if (user === null) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-[#FFF9F7]">
+        <p className="text-[#6D123F] text-lg font-medium">
+          Mengarahkan ke halaman login...
+        </p>
+      </div>
+    );
+  }
 
   return (
     <section className="min-h-screen flex flex-col bg-[#FFF9F7]">

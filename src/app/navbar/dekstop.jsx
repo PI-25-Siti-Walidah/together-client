@@ -1,11 +1,30 @@
 "use client";
 import { BotMessageSquare, User } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+import { useState, useEffect, useRef } from "react";
+import { useAuthStore } from "../../lib/store/useAuthStore";
 
 export default function NavbarDekstop() {
   const router = useRouter();
   const currentPath = usePathname();
+  const { user, checkAuth, logout } = useAuthStore();
+
+  const [showMenu, setShowMenu] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setShowMenu(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const handleBeranda = () => {
     router.push("/");
@@ -28,6 +47,14 @@ export default function NavbarDekstop() {
 
   const handleHerAi = () => {
     router.push("/her-ai");
+  };
+
+  const handleLogin = () => {
+    router.push("/akun/login");
+  };
+
+  const handleRegister = () => {
+    router.push("/akun/register");
   };
 
   return (
@@ -112,19 +139,42 @@ export default function NavbarDekstop() {
             <BotMessageSquare />
             Her Ai
           </button>
-          <button
-            onClick={handleUserAkun}
-            // className="btn btn-circle border-pink-200 bg-pink-200 hover:bg-pink-500"
-            className={`btn btn-circle hover:bg-pink-500
-              ${
+
+          <div className="relative" ref={menuRef}>
+            <button
+              onClick={() => {
+                if (user) {
+                  handleUserAkun();
+                } else {
+                  setShowMenu(!showMenu);
+                }
+              }}
+              className={`btn btn-circle hover:bg-pink-500 transition ${
                 currentPath.startsWith("/user")
-                  ? "bg-[#6D123F] text-white border-none"
+                  ? "bg-[#6D123F] text-white"
                   : "border-pink-200 bg-pink-200"
-              }
-            `}
-          >
-            <User />
-          </button>
+              }`}
+            >
+              <User />
+            </button>
+
+            {!user && showMenu && (
+              <div className="absolute right-0 mt-3 bg-white border shadow-md rounded-lg w-40 py-2 z-50">
+                <button
+                  onClick={handleLogin}
+                  className="block w-full text-left px-4 py-2 text-sm text-[#6D123F] hover:bg-pink-50"
+                >
+                  Login
+                </button>
+                <button
+                  onClick={handleRegister}
+                  className="block w-full text-left px-4 py-2 text-sm text-[#6D123F] hover:bg-pink-50"
+                >
+                  Register
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>

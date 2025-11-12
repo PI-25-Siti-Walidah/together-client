@@ -7,12 +7,31 @@ import {
   Activity,
   User,
 } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+import { useState, useEffect, useRef } from "react";
+import { useAuthStore } from "../../lib/store/useAuthStore";
 
 export default function Mobile() {
   const router = useRouter();
   const currentPath = usePathname();
+  const { user, checkAuth, logout } = useAuthStore();
+
+  const [showMenu, setShowMenu] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setShowMenu(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const handleBeranda = () => {
     router.push("/");
@@ -21,6 +40,7 @@ export default function Mobile() {
   const handleInfo = () => {
     router.push("/info");
   };
+
   const handleAktivitas = () => {
     router.push("/aktivitas");
   };
@@ -32,8 +52,17 @@ export default function Mobile() {
   const handleHerAi = () => {
     router.push("/her-ai");
   };
+
   const handleUserAkun = () => {
     router.push("/user");
+  };
+
+  const handleLogin = () => {
+    router.push("/akun/login");
+  };
+
+  const handleRegister = () => {
+    router.push("/akun/register");
   };
 
   return (
@@ -53,7 +82,13 @@ export default function Mobile() {
         </div>
         <div className="navbar-end gap-3">
           <button
-            onClick={handleUserAkun}
+            onClick={() => {
+              if (user) {
+                handleUserAkun();
+              } else {
+                setShowMenu(!showMenu);
+              }
+            }}
             // className="btn btn-circle border-pink-200 bg-pink-200 hover:bg-pink-500"
             className={`btn btn-circle border-pink-200 bg-pink-200 hover:bg-pink-500
               ${currentPath.startsWith("/user") ? "bg-pink-500" : "text-black"}
@@ -61,6 +96,23 @@ export default function Mobile() {
           >
             <User className="w-5 h-5" />
           </button>
+
+          {!user && showMenu && (
+            <div className="absolute right-0 mt-3 bg-white border shadow-md rounded-lg w-40 py-2 z-50">
+              <button
+                onClick={handleLogin}
+                className="block w-full text-left px-4 py-2 text-sm text-[#6D123F] hover:bg-pink-50"
+              >
+                Login
+              </button>
+              <button
+                onClick={handleRegister}
+                className="block w-full text-left px-4 py-2 text-sm text-[#6D123F] hover:bg-pink-50"
+              >
+                Register
+              </button>
+            </div>
+          )}
         </div>
       </div>
       <div className="fixed bottom-0 left-0 right-0 z-50">
