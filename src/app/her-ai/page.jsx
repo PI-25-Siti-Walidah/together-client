@@ -65,15 +65,15 @@ export default function TanyaAI() {
 
           <div className="flex flex-col gap-3">
             <textarea
-              className="textarea textarea-bordered w-full bg-white border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-300"
-              placeholder="Contoh: Saya butuh bantuan pendidikan untuk anak saya di Surabaya"
+              className="textarea w-full bg-white text-gray-800 border border-gray-300 rounded-xl focus:outline-none focus:ring-1 focus:ring-pink-300 focus:border-pink-300"
+              placeholder="Contoh: Saya butuh bantuan pendidikan untuk anak saya"
               rows={3}
               value={question}
               onChange={(e) => setQuestion(e.target.value)}
             ></textarea>
 
             <button
-              className="btn bg-[#6D123F] text-white border-none hover:bg-pink-700 rounded-xl transition"
+              className="btn bg-[#6D123F] text-white border-none hover:bg-pink-600 rounded-xl transition-all duration-300 hover:scale-105"
               onClick={handleAsk}
               disabled={loading}
             >

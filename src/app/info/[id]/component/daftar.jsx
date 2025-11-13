@@ -12,7 +12,7 @@ export default function Daftar({ onOpen }) {
           <div className="justify-end card-actions">
             <button
               onClick={onOpen}
-              className="btn w-full bg-[#6D123F] hover:bg-pink-600 rounded-sm border-none text-white"
+              className="btn w-full bg-[#6D123F] hover:bg-pink-600 rounded-sm border-none text-white transition-all duration-300 hover:scale-105"
             >
               Daftar Sekarang
             </button>
