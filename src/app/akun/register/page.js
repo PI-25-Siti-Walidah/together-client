@@ -146,8 +146,6 @@ export default function Register() {
             ))}
 
             <button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.97 }}
               type="submit"
               disabled={loading}
               className="btn w-full mt-4 bg-[#6D123F] text-white font-semibold rounded-md border-none hover:bg-pink-700 transition-all duration-300 py-2"
@@ -183,8 +181,6 @@ export default function Register() {
               Akun Anda berhasil dibuat. Silakan login untuk melanjutkan.
             </p>
             <button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
               onClick={handleCloseModal}
               className="mt-4 px-4 py-2 bg-[#6D123F] text-white rounded-md hover:bg-pink-700 border-none transition"
             >
