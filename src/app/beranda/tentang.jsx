@@ -30,7 +30,7 @@ export default function Tentang() {
           </p>
           <button
             onClick={handleTentangKami}
-            className="mt-6 px-6 py-2 rounded-lg bg-[#6D123F] hover:bg-pink-600 text-white text-sm sm:text-base font-medium cur shadow transition-all duration-300 hover:scale-105"
+            className="mt-6 px-6 py-2 rounded-lg bg-[#6D123F] hover:bg-pink-600 text-white text-sm sm:text-base font-medium cur shadow transition-all duration-300 hover:scale-105 cursor-pointer"
           >
             Lihat Detail
           </button>

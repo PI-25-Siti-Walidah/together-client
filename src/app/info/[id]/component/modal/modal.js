@@ -139,7 +139,8 @@ export default function Modal({
           {currentStep === 4 && <Step4 data={formData} bantuan={bantuan} />}
           <button
             onClick={onClose}
-            className="btn btn-sm btn-circle btn-ghost text-gray-800 absolute right-2 top-2"
+            className="btn btn-sm btn-circle btn-ghost text-gray-800 absolute right-2 top-2 
+             dark:hover:bg-gray-300 transition-colors"
           >
             ✕
           </button>
