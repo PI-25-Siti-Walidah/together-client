@@ -1,4 +1,19 @@
+"use client";
+import { useAuthStore } from "../../../../lib/store/useAuthStore";
+import { useRouter } from "next/navigation";
+
 export default function Daftar({ onOpen }) {
+  const { user } = useAuthStore();
+  const router = useRouter();
+
+  const handleDaftarClick = () => {
+    if (!user) {
+      router.push("/akun/login");
+      return;
+    }
+    onOpen();
+  };
+
   return (
     <section className="mt-3">
       <div className="card w-full bg-white lg:w-md card-md shadow-sm">
@@ -11,8 +26,8 @@ export default function Daftar({ onOpen }) {
           </p>
           <div className="justify-end card-actions">
             <button
-              onClick={onOpen}
-              className="btn w-full bg-[#6D123F] hover:bg-pink-600 rounded-sm border-none text-white"
+              onClick={handleDaftarClick}
+              className="btn w-full bg-[#6D123F] hover:bg-pink-600 rounded-sm border-none text-white transition-all duration-300 hover:scale-105"
             >
               Daftar Sekarang
             </button>

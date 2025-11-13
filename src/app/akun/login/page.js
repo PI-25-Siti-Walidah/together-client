@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { User, Lock } from "lucide-react";
 import { useState, useEffect } from "react";
+
 import { useAuthStore } from "../../../lib/store/useAuthStore";
 
 export default function Login() {
@@ -55,8 +56,6 @@ export default function Login() {
             Belum punya <span className="underline">akun</span>?
           </p>
           <button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
             onClick={handleRegister}
             className="btn mt-4 text-[16px] text-pink-50 font-bold bg-[#6D123F] rounded-md border-none hover:bg-pink-600 shadow-md transition-all"
           >
@@ -127,8 +126,6 @@ export default function Login() {
             </div>
 
             <button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={loading}
               className="btn w-full mt-4 bg-pink-50 text-[#6D123F] font-bold py-2 rounded-md hover:bg-pink-600 hover:text-white border-none transition-all duration-300"
