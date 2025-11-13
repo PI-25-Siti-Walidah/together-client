@@ -36,7 +36,9 @@ export default function Cara() {
                   {i + 1}
                 </span>
               </div>
-              <p className="text-xs text-center opacity-80">{step.text}</p>
+              <p className="text-xs text-center text-gray-900 opacity-80">
+                {step.text}
+              </p>
             </div>
           ))}
         </div>
